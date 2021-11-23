@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="module-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="schumi178 &lt;babelm@gmail.com&gt;" />
+        <option value="schumi178 &lt;72409038+schumi178@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectId" id="1yu0sQpcbb5ssnRC57xZwu8I4Fa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assembly" />
+      <recent name="$PROJECT_DIR$/frontend/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assembly" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="schumi178.javaprojects.graphics.zad1.filter" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SimpleDraw" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="schumi178.javaprojects.graphics.zad1.SimpleDraw" />
+      <module name="simpledraw-frontend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="schumi178.javaprojects.graphics.zad1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SimpleDraw" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="" />
+      <created>1633086373656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633086373656</updated>
+      <workItem from="1633086374930" duration="21662000" />
+      <workItem from="1633177941838" duration="2836000" />
+      <workItem from="1633455739741" duration="601000" />
+      <workItem from="1633535197420" duration="2865000" />
+      <workItem from="1633543284709" duration="604000" />
+      <workItem from="1633597152176" duration="599000" />
+      <workItem from="1633688050342" duration="15448000" />
+      <workItem from="1633790744956" duration="61487000" />
+      <workItem from="1634053033614" duration="15563000" />
+      <workItem from="1634235384430" duration="11807000" />
+      <workItem from="1634290447434" duration="30000" />
+      <workItem from="1634290491988" duration="2293000" />
+      <workItem from="1634412437492" duration="1514000" />
+      <workItem from="1634489452613" duration="1106000" />
+      <workItem from="1634492308547" duration="166000" />
+      <workItem from="1634496099323" duration="21234000" />
+      <workItem from="1634661259885" duration="17378000" />
+      <workItem from="1634819063556" duration="7505000" />
+      <workItem from="1634898896205" duration="20506000" />
+      <workItem from="1635190962440" duration="600000" />
+      <workItem from="1635260398638" duration="23069000" />
+      <workItem from="1635417858268" duration="904000" />
+      <workItem from="1635418778172" duration="24000" />
+      <workItem from="1635418816737" duration="3465000" />
+      <workItem from="1635422459367" duration="14070000" />
+      <workItem from="1635501787641" duration="149000" />
+      <workItem from="1635502636852" duration="14454000" />
+      <workItem from="1635841738274" duration="25653000" />
+      <workItem from="1637170895475" duration="40242000" />
+      <workItem from="1637670770278" duration="240000" />
+      <workItem from="1637671016798" duration="30000" />
+      <workItem from="1637671050777" duration="60000" />
+      <workItem from="1637671125622" duration="14000" />
+      <workItem from="1637671145457" duration="5000" />
+      <workItem from="1637671158749" duration="1899000" />
+      <workItem from="1637673695148" duration="3000" />
+    </task>
+    <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
+      <created>1637669774548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637669774548</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Wstawienie tego co mam do tej pory">
+      <created>1637673319838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637673319838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Wstawienie tego co mam do tej pory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wstawienie tego co mam do tej pory" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/FileLoader.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/ppm/PPMReader.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/ppm/PPMReader.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/morpho/HitOrMissFilter.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="MavenRunConfiguration">
+        <watch expression="(bytes[3] + 128.0) / 255.0" language="JAVA" />
+        <watch expression="Math.round(color.getRed() * 255)" language="JAVA" />
+        <watch expression="Math.round(color.getGreen() * 255)" language="JAVA" />
+        <watch expression="Math.round(color.getBlue() * 255)" language="JAVA" />
+        <watch expression="Math.round(color.getOpacity() * 255)" language="JAVA" />
+        <watch expression="keyEvent.getCharacter()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

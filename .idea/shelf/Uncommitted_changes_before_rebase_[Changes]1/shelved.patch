@@ -1,0 +1,456 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>target/\npom.xml.tag\npom.xml.releaseBackup\npom.xml.versionsBackup\npom.xml.next\nrelease.properties\ndependency-reduced-pom.xml\nbuildNumber.properties\n.mvn/timing.properties\n# https://github.com/takari/maven-wrapper#usage-without-binary-jar\n.mvn/wrapper/maven-wrapper.jar\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	
++++ b/.gitignore	
+@@ -9,3 +9,4 @@
+ .mvn/timing.properties
+ # https://github.com/takari/maven-wrapper#usage-without-binary-jar
+ .mvn/wrapper/maven-wrapper.jar
++ppm-obrazy-testowe/
+Index: assembly.xml
+===================================================================
+diff --git a/assembly.xml b/assembly.xml
+deleted file mode 100644
+--- a/assembly.xml	
++++ /dev/null	
+@@ -1,39 +0,0 @@
+-<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+-    <id>full-with-modules</id>
+-    <formats>
+-        <format>jar</format>
+-    </formats>
+-    <includeBaseDirectory>false</includeBaseDirectory>
+-    <dependencySets>
+-        <dependencySet>
+-            <useProjectArtifact>false</useProjectArtifact>
+-            <outputDirectory>/</outputDirectory>
+-            <unpack>false</unpack>
+-        </dependencySet>
+-    </dependencySets>
+-    <moduleSets>
+-        <moduleSet>
+-
+-            <!-- Enable access to all projects in the current multimodule build! -->
+-            <useAllReactorProjects>true</useAllReactorProjects>
+-
+-            <!-- Now, select which projects to include in this module-set. -->
+-            <includes>
+-                <include>schumi178.javaprojects.graphics:simpledraw-frontend</include>
+-            </includes>
+-            <binaries>
+-                <outputDirectory>/</outputDirectory>
+-                <dependencySets>
+-                    <dependencySet>
+-                        <useProjectArtifact>false</useProjectArtifact>
+-                        <outputDirectory>/</outputDirectory>
+-                        <unpack>false</unpack>
+-                    </dependencySet>
+-                </dependencySets>
+-                <unpack>true</unpack>
+-            </binaries>
+-        </moduleSet>
+-    </moduleSets>
+-</assembly>
+\ No newline at end of file
+Index: assembly/assembly.iml
+===================================================================
+diff --git a/assembly/assembly.iml b/assembly/assembly.iml
+deleted file mode 100644
+--- a/assembly/assembly.iml	
++++ /dev/null	
+@@ -1,32 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+-    <output url="file://$MODULE_DIR$/target/classes" />
+-    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+-      <excludeFolder url="file://$MODULE_DIR$/target" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="module" module-name="simpledraw-frontend" />
+-    <orderEntry type="library" name="Maven: org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:linux:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:linux:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:linux:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:linux:17.0.0.1" level="project" />
+-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:linux:17.0.0.1" level="project" />
+-    <orderEntry type="module" module-name="3d" />
+-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.1" level="project" />
+-    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.8.1" level="project" />
+-    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
+-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.1" level="project" />
+-    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.1" level="project" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	
++++ /dev/null	
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: lol.sdr
+===================================================================
+diff --git a/lol.sdr b/lol.sdr
+deleted file mode 100644
+--- a/lol.sdr	
++++ /dev/null	
+@@ -1,2 +0,0 @@
+-
+-    �   I   C   �   �� �  A   2   �   �   �   �  A   2��   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�  T   �   �   �   �   �  T   ����   �   '   �  I   �  I   �   '���   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�  T   �   �   �   �   �  T   ����   �   '   �  I   �  I   �   '���  T   �   �   �   �   �  T   ����  T   �   �   �   �   �  T   ����  T   �   �   �   �   �  T   ����  T   �   �   �   �   �  T   ����   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�  T   �   �   �   �   �  T   ����   �   '   �  I   �  I   �   '���   �   '   �  I   �  I   �   '���   '   +   �  X   �  X   '   +�   �   '   �  I   �  I   �   '���  T   �   �   �   �   �  T   ����  T   �   �   �   �   �  T   ����
+\ No newline at end of file
+Index: ppm-obrazy-testowe/ppm-obrazy-testowe/README.txt
+===================================================================
+diff --git a/ppm-obrazy-testowe/ppm-obrazy-testowe/README.txt b/ppm-obrazy-testowe/ppm-obrazy-testowe/README.txt
+deleted file mode 100644
+--- a/ppm-obrazy-testowe/ppm-obrazy-testowe/README.txt	
++++ /dev/null	
+@@ -1,38 +0,0 @@
+-Obrazy testowe do zadania PPM z Grafiki Komputerowej.
+-Opracował: dr inż. Marcin Skoczylas
+-
+-* ppm-test-01-p3.ppm
+-
+-Podstawowy, najprostszy test kolorów.
+-
+-* ppm-test-02-p3-comments.ppm
+-
+-Sprawdzenie czy dobrze są parsowane komentarze i białe spacje, oraz znaki specjalne.
+-
+-* ppm-test-03-p6.ppm
+-
+-Prosty obrazek testujący parser pikseli w wersji binarnej.
+-
+-* ppm-test-04-p3-16bit.ppm
+-
+-Obraz sprawdzający poprawność wczytywania i wyświetlania pikseli w przestrzeni koloru RGB 16-bitowej.
+-
+-* ppm-test-05-p6.ppm
+-
+-Prosty obraz testujący poprawność kolorów w wersji binarnej.
+-
+-* ppm-test-06-p6.ppm
+-
+-Obraz przedstawijający czajnik (teapot).
+-
+-* ppm-test-07-p3-big.ppm
+-
+-Obraz w wysokiej rozdzielczości przedstawiający gwiazdy, 6000x1918 pikseli. 
+-Ten obraz program powinien załadować w mniej niż 8 sekund.
+-
+-* ppm-test-08-p6-big.ppm
+-
+-Obraz w wysokiej rozdzielczości przedstawiający człowieka na księżycu, 7740x2454 pikseli. 
+-Ten obraz program powinien załadować w mniej niż 5 sekund.
+-
+-
+Index: frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawBezier.java
+===================================================================
+diff --git a/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawBezier.java b/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawBezier.java
+deleted file mode 100644
+--- a/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawBezier.java	
++++ /dev/null	
+@@ -1,26 +0,0 @@
+-package schumi178.javaprojects.graphics.zad1.tools;
+-
+-import javafx.scene.input.MouseEvent;
+-import schumi178.javaprojects.graphics.zad1.event.ToolUseEvent;
+-import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
+-
+-public class ToolDrawBezier implements Tool {
+-
+-    private BezierCurve currentCurve;
+-
+-    @Override
+-    public void onLeftPressed(ToolUseEvent event) {
+-        MouseEvent mouseEvent = event.getMouseEvent();
+-
+-    }
+-
+-    @Override
+-    public boolean onLeftDragged(ToolUseEvent event) {
+-        return false;
+-    }
+-
+-    @Override
+-    public void onLeftReleased(ToolUseEvent event) {
+-
+-    }
+-}
+Index: frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java
+===================================================================
+diff --git a/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java b/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java
+deleted file mode 100644
+--- a/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java	
++++ /dev/null	
+@@ -1,112 +0,0 @@
+-package schumi178.javaprojects.graphics.zad1.shapes;
+-
+-import javafx.collections.FXCollections;
+-import javafx.collections.ObservableList;
+-import javafx.geometry.Bounds;
+-import javafx.geometry.Point2D;
+-import javafx.scene.canvas.GraphicsContext;
+-import javafx.scene.paint.Color;
+-
+-import java.util.HashMap;
+-import java.util.List;
+-import java.util.Map;
+-import java.util.Objects;
+-
+-public class BezierCurve implements DrawableShape {
+-
+-    private static final Map<NewtonPair, Integer> newtonCache = new HashMap<>();
+-    private static final ObservableList<Point2D> waypoints = FXCollections.observableArrayList();
+-    private int n;
+-
+-    private static class NewtonPair {
+-        private final int n;
+-        private final int k;
+-
+-        public NewtonPair(int n, int k) {
+-            this.n = n;
+-            this.k = k;
+-        }
+-
+-        public int getN() {
+-            return n;
+-        }
+-
+-        public int getK() {
+-            return k;
+-        }
+-
+-        @Override
+-        public boolean equals(Object o) {
+-            if (this == o) return true;
+-            if (o == null || getClass() != o.getClass()) return false;
+-            NewtonPair that = (NewtonPair) o;
+-            return n == that.n && k == that.k;
+-        }
+-
+-        @Override
+-        public int hashCode() {
+-            return Objects.hash(n, k);
+-        }
+-    }
+-
+-    private int newton(int n, int k) {
+-        if(!newtonCache.containsKey(new NewtonPair(n, k))) {
+-            int numerator = 1;
+-            for(int i = n-k+1; i < n+1; i++) {
+-                numerator *= i;
+-            }
+-
+-            int denominator = 1;
+-            for(int i = 1; i < k+1; i++) {
+-                denominator *= i;
+-            }
+-
+-            newtonCache.put(new NewtonPair(n, k), numerator / denominator);
+-        }
+-        return newtonCache.get(new NewtonPair(n, k));
+-    }
+-
+-    private double bernstein(int n, int i, int t) {
+-        return newton(n, i) * Math.pow(t, i) * Math.pow(1.0 - t, n - i);
+-    }
+-
+-    @Override
+-    public void draw(GraphicsContext context) {
+-
+-    }
+-
+-    @Override
+-    public boolean containsPoint(double x, double y) {
+-        return false;
+-    }
+-
+-    @Override
+-    public void translate(double x, double y) {
+-
+-    }
+-
+-    @Override
+-    public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
+-
+-    }
+-
+-    @Override
+-    public void setColor(Color color) {
+-
+-    }
+-
+-    @Override
+-    public void updateStartingPoint() {
+-
+-    }
+-
+-    @Override
+-    public byte[] serialize() {
+-        return new byte[0];
+-    }
+-
+-    @Override
+-    public Bounds getBounds() {
+-        return null;
+-    }
+-}
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
