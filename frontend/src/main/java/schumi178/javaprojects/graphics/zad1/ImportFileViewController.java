@@ -72,7 +72,8 @@ public class ImportFileViewController implements Initializable {
                 new NoParamFilterMenuItem(MeanIterativeSelectionBinarizationFilter::new, importedImage, "Selekcja iteratywna średniej"),
                 new NoParamFilterMenuItem(OtsuBinarizationFilter::new, importedImage, "Otsu"),
                 new NoParamFilterMenuItem(NiblackBinarizationFilter::new, importedImage, "Niblack"),
-                new NoParamFilterMenuItem(SauvolaBinarizationFilter::new, importedImage, "Sauvola"));
+                new NoParamFilterMenuItem(SauvolaBinarizationFilter::new, importedImage, "Sauvola"),
+                new NoParamFilterMenuItem(PhansalkarBinarizationFilter::new, importedImage, "Phansalkar"));
         morphoFilterMenu.getItems().addAll(new NoParamFilterMenuItem(ErosionFilter::new, importedImage, "Erozja"),
                 new NoParamFilterMenuItem(DilationFilter::new, importedImage, "Dylatacja"),
                 new NoParamFilterMenuItem(OpeningFilter::new, importedImage, "Otwarcie"),
