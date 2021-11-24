@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/NiblackBasedBinarizationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/NiblackBinarizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/NiblackBinarizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/PhansalkarBinarizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/PhansalkarBinarizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/SauvolaBinarizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/binarization/SauvolaBinarizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +140,7 @@
       <workItem from="1637671158749" duration="1899000" />
       <workItem from="1637673695148" duration="3000" />
       <workItem from="1637673706546" duration="813000" />
-      <workItem from="1637678432706" duration="4654000" />
+      <workItem from="1637678432706" duration="7708000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -173,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637772162300</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refaktoring filtrów opartych na Niblacku">
+      <created>1637773904923</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637773904923</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +198,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Wstawienie tego co mam do tej pory" />
     <MESSAGE value="Phansalkar i obrazy testowe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Phansalkar i obrazy testowe" />
+    <MESSAGE value="Refaktoring filtrów opartych na Niblacku" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refaktoring filtrów opartych na Niblacku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

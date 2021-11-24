@@ -3,14 +3,42 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BezierCurve implements DrawableShape {
-    private Map<List<Integer>, Double> newtonCache;
+    private static final Map<NewtonPair, Double> newtonCache = new HashMap<>();
+
+    private static class NewtonPair {
+        private final int n;
+        private final int k;
+
+        private NewtonPair(int n, int k) {
+            this.n = n;
+            this.k = k;
+        }
+
+        public int getN() {
+            return n;
+        }
+
+        public int getK() {
+            return k;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            NewtonPair that = (NewtonPair) o;
+            return n == that.n && k == that.k;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(n, k);
+        }
+    }
 
     @Override
     public void draw(GraphicsContext context) {
@@ -53,9 +81,13 @@ public class BezierCurve implements DrawableShape {
     }
 
     private double calculateNewton(int n, int k) {
+        NewtonPair pair = new NewtonPair(n, k);
+        if(newtonCache.containsKey(pair)) {
+            return newtonCache.get(pair);
+        }
+
         double numerator;
         double denominator;
-        List<Integer> newKey;
 
         numerator = 1;
         for (int i = n - k + 1; i < n + 1; i++) {
@@ -66,13 +98,10 @@ public class BezierCurve implements DrawableShape {
         for (int i = 1; i < k + 1; i++) {
             denominator *= i;
         }
-        newKey = new ArrayList<>();
-        newKey.add(n);
-        newKey.add(k);
         double newValue = numerator / denominator;
-        newtonCache.put(newKey, newValue);
+        newtonCache.put(pair, newValue);
 
-        return newtonCache.get(newKey);
+        return newtonCache.get(pair);
     }
 
     private double bernstein(int n, int i, double t) {
