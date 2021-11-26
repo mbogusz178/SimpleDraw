@@ -10,16 +10,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
@@ -29,6 +32,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import javafx.util.Pair;
 import schumi178.javaprojects.graphics.zad1.event.ToolUseEvent;
 import schumi178.javaprojects.graphics.zad1.exception.BrokenFileException;
 import schumi178.javaprojects.graphics.zad1.io.*;
@@ -294,6 +298,49 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     @FXML
     private void onSelectResize() {
         currentTool = new ToolResize(this::updateCanvasWithSelection);
+    }
+
+    @FXML
+    private void moveByCoordinates() {
+        Dialog<Pair<String, String>> moveToPointDialog = new Dialog<>();
+        moveToPointDialog.setTitle("Przesuwanie do punktu");
+        moveToPointDialog.setHeaderText("Przesuwanie do punktu");
+
+        ButtonType moveToPointButtonType = new ButtonType("Przesuń", ButtonBar.ButtonData.OK_DONE);
+        moveToPointDialog.getDialogPane().getButtonTypes().addAll(moveToPointButtonType, ButtonType.CANCEL);
+
+        GridPane gridPane = new GridPane();
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+
+        TextField xCoordinate = new TextField();
+        TextField yCoordinate = new TextField();
+
+        gridPane.add(new Label("Współrzędna X"), 0, 0);
+        gridPane.add(xCoordinate, 1, 0);
+        gridPane.add(new Label("Współrzędna Y"), 0, 1);
+        gridPane.add(yCoordinate, 1, 1);
+
+        Node moveToPointButton = moveToPointDialog.getDialogPane().lookupButton(moveToPointButtonType);
+        moveToPointButton.setDisable(true);
+
+        xCoordinate.textProperty().addListener((observableValue, oldValue, newValue) ->
+                moveToPointButton.setDisable(newValue.trim().isEmpty()));
+
+        moveToPointDialog.getDialogPane().setContent(gridPane);
+
+        moveToPointDialog.setResultConverter(buttonType ->
+                new Pair<>(xCoordinate.getText(), yCoordinate.getText()));
+
+        Optional<Pair<String, String>> result = moveToPointDialog.showAndWait();
+        result.ifPresent(pair -> {
+            int x = Integer.parseInt(xCoordinate.getText());
+            int y = Integer.parseInt(yCoordinate.getText());
+
+            DrawableShape shape = shapes.get(0);
+            shape.translate(x, y);
+            updateCanvas();
+        });
     }
 
     @FXML
