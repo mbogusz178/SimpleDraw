@@ -2,6 +2,7 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 
 import javafx.geometry.Bounds;
 import javafx.geometry.HorizontalDirection;
+import javafx.geometry.Point2D;
 import javafx.geometry.VerticalDirection;
 import javafx.scene.Cursor;
 import javafx.scene.canvas.GraphicsContext;
@@ -51,7 +52,7 @@ public interface DrawableShape {
     boolean containsPoint(double x, double y);
     void translate(double x, double y);
     void resize(double x, double y, double newMouseX, double newMouseY, Edge edge);
-    void scaleByFactor(double factor);
+    void scaleByFactor(double factor, Point2D origin);
     void rotate(int angle);
     void setColor(Color color);
     void updateStartingPoint();

@@ -3,6 +3,7 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 import javafx.beans.value.ChangeListener;
 import javafx.geometry.Bounds;
 import javafx.geometry.HorizontalDirection;
+import javafx.geometry.Point2D;
 import javafx.geometry.VerticalDirection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -116,7 +117,7 @@ public class DrawableRectangle implements DrawableShape {
     }
 
     @Override
-    public void scaleByFactor(double factor) {
+    public void scaleByFactor(double factor, Point2D origin) {
         theoreticalWidth *= factor;
         rect.setWidth(Math.abs(theoreticalWidth));
         theoreticalHeight *= factor;

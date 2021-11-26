@@ -82,6 +82,8 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private RadioButton toggleToolSelect;
     @FXML
     private RadioButton toggleToolModifyBezier;
+    @FXML
+    private RadioButton toggleToolPolygon;
 
     @FXML
     private ColorPicker drawingColorPicker;
@@ -122,6 +124,10 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             mousePressedX = event.getX();
             mousePressedY = event.getY();
             currentTool.onLeftPressed(toolEvent);
+        } else if(event.getButton() == MouseButton.SECONDARY) {
+            mousePressedX = event.getX();
+            mousePressedY = event.getY();
+            currentTool.onRightPressed(toolEvent);
         }
     }
 
@@ -260,6 +266,13 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         toolModifyBezierStyleClass.add("toggle-button");
         toggleToolModifyBezier.setGraphic(iconModifyBezier);
 
+        Image imagePolygon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/polygon.png")));
+        ImageView iconPolygon = new ImageView(imagePolygon);
+        ObservableList<String> toolPolygonStyleClass = toggleToolPolygon.getStyleClass();
+        toolPolygonStyleClass.remove("radio-button");
+        toolPolygonStyleClass.add("toggle-button");
+        toggleToolPolygon.setGraphic(iconPolygon);
+
         curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
         curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
 
@@ -360,6 +373,9 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private void onSelectModifyBezier() { currentTool = new ToolModifyBezier(this::updateWithHoveringBezierCurve, this::updateWithHoveringBezierWaypointIndex); }
 
     @FXML
+    private void onSelectPolygon() { currentTool = new ToolDrawPolygons(this::updateCanvas); }
+
+    @FXML
     private void onSelectFree() {
         currentTool = new ToolDrawFree();
     }
@@ -446,7 +462,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
                 return;
             }
 
-            selectedShape.scaleByFactor(factor);
+            selectedShape.scaleByFactor(factor, new Point2D(0, 0));
             selectedShape.draw(canvas.getGraphicsContext2D());
             updateCanvas();
         });
@@ -478,7 +494,6 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             }
 
             selectedShape.rotate(angle);
-            selectedShape.draw(canvas.getGraphicsContext2D());
             updateCanvas();
         });
     }

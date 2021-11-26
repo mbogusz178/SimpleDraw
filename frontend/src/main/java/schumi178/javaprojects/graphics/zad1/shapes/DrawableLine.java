@@ -2,6 +2,7 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 
 import javafx.beans.value.ChangeListener;
 import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -47,7 +48,7 @@ public class DrawableLine implements DrawableShape {
     }
 
     @Override
-    public void scaleByFactor(double factor) {
+    public void scaleByFactor(double factor, Point2D origin) {
         line.setEndX(line.getEndX() * factor);
         line.setEndY(line.getEndY() * factor);
     }

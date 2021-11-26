@@ -3,6 +3,7 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 import javafx.beans.value.ChangeListener;
 import javafx.geometry.Bounds;
 import javafx.geometry.HorizontalDirection;
+import javafx.geometry.Point2D;
 import javafx.geometry.VerticalDirection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -72,7 +73,7 @@ public class DrawableOval implements DrawableShape {
     }
 
     @Override
-    public void scaleByFactor(double factor) {
+    public void scaleByFactor(double factor, Point2D origin) {
         theoreticalRadiusX *= factor;
         oval.setRadiusX(Math.abs(theoreticalRadiusX) / 2.0);
         theoreticalRadiusY *= factor;

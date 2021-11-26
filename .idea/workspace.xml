@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawPolygons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Matrix3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Vector3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/polygon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/io/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/io/FileLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierStateNotCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierStateNotCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableOval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableTriangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/FreeDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/FreeDrawing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/WritableText.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/WritableText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/Tool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +75,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assembly" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -152,7 +166,7 @@
       <workItem from="1637678432706" duration="8325000" />
       <workItem from="1637789846694" duration="2398000" />
       <workItem from="1637883513474" duration="2509000" />
-      <workItem from="1637915695546" duration="29826000" />
+      <workItem from="1637915695546" duration="36426000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -238,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637958998465</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Serializacja krzywej Beziera">
+      <created>1637961243025</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637961243025</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +288,8 @@
     <MESSAGE value="Poprawa liczby segmentów" />
     <MESSAGE value="Narzędzie wybierania" />
     <MESSAGE value="Modyfikacja krzywej Beziera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modyfikacja krzywej Beziera" />
+    <MESSAGE value="Serializacja krzywej Beziera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Serializacja krzywej Beziera" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Bounds;
 import javafx.geometry.HorizontalDirection;
+import javafx.geometry.Point2D;
 import javafx.geometry.VerticalDirection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -125,7 +126,7 @@ public class DrawableTriangle implements DrawableShape {
     }
 
     @Override
-    public void scaleByFactor(double factor) {
+    public void scaleByFactor(double factor, Point2D origin) {
         ObservableList<Double> points = triangle.getPoints();
         theoreticalWidth *= factor;
         double newX = startingPointX + theoreticalWidth;

@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.BoundingBox;
 import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -75,7 +76,7 @@ public class FreeDrawing implements DrawableShape {
     }
 
     @Override
-    public void scaleByFactor(double factor) {
+    public void scaleByFactor(double factor, Point2D origin) {
 
     }
 

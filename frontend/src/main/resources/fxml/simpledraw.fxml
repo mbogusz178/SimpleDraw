@@ -97,6 +97,11 @@
                         <Tooltip text="Modyfikacja krzywej Beziera" />
                      </tooltip>
                   </RadioButton>
+                  <RadioButton fx:id="toggleToolPolygon" mnemonicParsing="false" onAction="#onSelectPolygon" toggleGroup="$tools">
+                     <tooltip>
+                        <Tooltip text="Wielokąt" />
+                     </tooltip>
+                  </RadioButton>
                   <ColorPicker fx:id="drawingColorPicker" />
                   <Button mnemonicParsing="false" onAction="#onChooseColor" text="Wybierz kolor" />
                   <Label fx:id="curveDegreeLabel" text="Stopień krzywej:" visible="false" />

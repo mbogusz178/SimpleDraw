@@ -146,7 +146,7 @@ public class BezierCurve implements DrawableShape {
     }
 
     @Override
-    public void scaleByFactor(double factor) {
+    public void scaleByFactor(double factor, Point2D origin) {
 
     }
 
