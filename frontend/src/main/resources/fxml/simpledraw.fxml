@@ -87,6 +87,11 @@
                         <Tooltip text="Krzywa Beziera" />
                      </tooltip>
                   </RadioButton>
+                  <RadioButton fx:id="toggleToolSelect" mnemonicParsing="false" onAction="#onSelectSelect" toggleGroup="$tools">
+                     <tooltip>
+                        <Tooltip text="Wybór" />
+                     </tooltip>
+                  </RadioButton>
                   <ColorPicker fx:id="drawingColorPicker" />
                   <Button mnemonicParsing="false" onAction="#onChooseColor" text="Wybierz kolor" />
                   <Label fx:id="curveDegreeLabel" text="Stopień krzywej:" visible="false" />

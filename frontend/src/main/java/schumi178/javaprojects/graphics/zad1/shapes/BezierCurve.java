@@ -16,6 +16,7 @@ public class BezierCurve implements DrawableShape {
     private double startingPointY;
     private double maxX;
     private double maxY;
+    private Point2D oldPointZeroCache;
 
     public Color getColor() {
         return color;
@@ -88,10 +89,14 @@ public class BezierCurve implements DrawableShape {
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
         Point2D origin = new Point2D(edge.getHorizontal() == HorizontalDirection.RIGHT ? startingPointX : maxX,
                 edge.getVertical() == VerticalDirection.DOWN ? startingPointY : maxY);
-        Point2D oldPoint = new Point2D(newMouseX - x, newMouseY - y);
+        Point2D oldPoint = Objects.requireNonNullElseGet(oldPointZeroCache, () -> new Point2D(newMouseX - x, newMouseY - y));
         double sx = 1, sy = 1;
         if (edge.getHorizontal() != null) {
-            sx = (newMouseX - origin.getX()) / (oldPoint.getX() - origin.getX());
+            double denominator = oldPoint.getX() - origin.getX();
+            if(denominator == 0)
+                sx = 0;
+            else
+                sx = (newMouseX - origin.getX()) / denominator;
 //                double numerator = oldPoint.getX() - bounds.getMinX();
 //                double denominator = bounds.getMaxX() - bounds.getMinX();
 //                double percentDistance;
@@ -104,17 +109,35 @@ public class BezierCurve implements DrawableShape {
 //                wayPoints.set(i, newPoint);
         }
         if(edge.getVertical() != null) {
-            sy = (newMouseY - origin.getY()) / (oldPoint.getY() - origin.getY());
+            double denominator = oldPoint.getY() - origin.getY();
+            if(denominator == 0)
+                sy = 0;
+            else
+                sy = (newMouseY - origin.getY()) / denominator;
         }
-        System.out.println("origin: (" + origin.getX() + ", " + origin.getY() + ")");
+        boolean hasOnlyZeroes = true;
+        List<Point2D> oldWaypoints = new ArrayList<>();
         for(int i = 0; i < wayPoints.size(); i++) {
+            oldWaypoints.add(new Point2D(wayPoints.get(i).getX(), wayPoints.get(i).getY()));
             double newPointX = origin.getX() + (wayPoints.get(i).getX() - origin.getX()) * sx;
             double newPointY = origin.getY() + (wayPoints.get(i).getY() - origin.getY()) * sy;
             Point2D newPoint = new Point2D(newPointX, newPointY);
-            System.out.print(i + ": (" + wayPoints.get(i).getX() + ", " + wayPoints.get(i).getY() + "), ");
             wayPoints.set(i, newPoint);
         }
-        System.out.println();
+        for (Point2D wayPoint : wayPoints) {
+            if (wayPoint.getX() - origin.getX() != 0 && wayPoint.getY() - origin.getY() != 0) {
+                hasOnlyZeroes = false;
+                break;
+            }
+        }
+        if(hasOnlyZeroes) {
+            oldPointZeroCache = oldPoint;
+            for(int i = 0; i < wayPoints.size(); i++) {
+                wayPoints.set(i, oldWaypoints.get(i));
+            }
+            return;
+        }
+        oldPointZeroCache = null;
     }
 
     @Override

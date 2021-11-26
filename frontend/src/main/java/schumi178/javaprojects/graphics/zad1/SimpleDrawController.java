@@ -37,7 +37,6 @@ import schumi178.javaprojects.graphics.zad1.exception.BrokenFileException;
 import schumi178.javaprojects.graphics.zad1.io.FileLoader;
 import schumi178.javaprojects.graphics.zad1.io.PortableAnymapReader;
 import schumi178.javaprojects.graphics.zad1.io.PortableAnymapWriter;
-import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
 import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
 import schumi178.javaprojects.graphics.zad1.threedimensions.RGBCubeApp;
 import schumi178.javaprojects.graphics.zad1.tools.*;
@@ -80,6 +79,8 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private RadioButton toggleToolText;
     @FXML
     private RadioButton toggleToolBezier;
+    @FXML
+    private RadioButton toggleToolSelect;
 
     @FXML
     private ColorPicker drawingColorPicker;
@@ -92,6 +93,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private double mousePressedX;
     private double mousePressedY;
     private final ObservableList<DrawableShape> shapes = FXCollections.observableArrayList();
+    private DrawableShape selectedResizeShape = null;
     private DrawableShape selectedShape = null;
 
     @FXML
@@ -140,6 +142,11 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         }
     }
 
+    private void updateCanvasWithResizeSelection(DrawableShape shape) {
+        selectedResizeShape = shape;
+        updateCanvas();
+    }
+
     private void updateCanvasWithSelection(DrawableShape shape) {
         selectedShape = shape;
         updateCanvas();
@@ -154,7 +161,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         canvas.setFocusTraversable(true);
         canvas.addEventFilter(MouseEvent.ANY, (e) -> canvas.requestFocus());
         canvas.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if(!newValue) updateCanvasWithSelection(null);
+            if(!newValue) updateCanvasWithResizeSelection(null);
         });
         drawingColorPicker.setValue(Color.BLACK);
         shapes.addListener(this);
@@ -226,6 +233,13 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         toolBezierStyleClass.add("toggle-button");
         toggleToolBezier.setGraphic(iconBezier);
 
+        Image imageSelect = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/select.png")));
+        ImageView iconSelect = new ImageView(imageSelect);
+        ObservableList<String> toolSelectStyleClass = toggleToolSelect.getStyleClass();
+        toolSelectStyleClass.remove("radio-button");
+        toolSelectStyleClass.add("toggle-button");
+        toggleToolSelect.setGraphic(iconSelect);
+
         curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
         curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
 
@@ -241,11 +255,18 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             DrawableShape shape = it.previous();
             shape.draw(ctx);
         }
+        if(selectedResizeShape != null) {
+            Bounds selectedBounds = selectedResizeShape.getBounds();
+            ctx.setLineWidth(1.0);
+            ctx.setLineDashes(2.0);
+            ctx.setStroke(Color.BLACK);
+            ctx.strokeRect(selectedBounds.getMinX(), selectedBounds.getMinY(), selectedBounds.getWidth(), selectedBounds.getHeight());
+        }
         if(selectedShape != null) {
             Bounds selectedBounds = selectedShape.getBounds();
             ctx.setLineWidth(1.0);
             ctx.setLineDashes(2.0);
-            ctx.setStroke(Color.BLACK);
+            ctx.setStroke(Color.FORESTGREEN);
             ctx.strokeRect(selectedBounds.getMinX(), selectedBounds.getMinY(), selectedBounds.getWidth(), selectedBounds.getHeight());
         }
     }
@@ -289,22 +310,30 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private void onSelectBezier() { currentTool = new ToolBezierCurve(this::updateCanvas); }
 
     @FXML
+    private void onSelectSelect() { currentTool = new ToolSelect(this::updateCanvasWithSelection); }
+
+    @FXML
     private void onSelectFree() {
         currentTool = new ToolDrawFree();
     }
 
     @FXML
     private void onSelectText() {
-        currentTool = new ToolText(this::updateCanvasWithSelection, this::updateCanvas);
+        currentTool = new ToolText(this::updateCanvasWithResizeSelection, this::updateCanvas);
     }
 
     @FXML
     private void onSelectResize() {
-        currentTool = new ToolResize(this::updateCanvasWithSelection);
+        currentTool = new ToolResize(this::updateCanvasWithResizeSelection);
     }
 
     @FXML
     private void moveByCoordinates() {
+
+        if(selectedShape == null) {
+            showAlertWarning("Nie można wykonać przekształcenia", "Nie wybrano kształtu!");
+            return;
+        }
         Dialog<Pair<String, String>> moveByCoordinatesDialog = new Dialog<>();
         moveByCoordinatesDialog.setTitle("Przesuwanie do punktu");
         moveByCoordinatesDialog.setHeaderText("Przesuwanie do punktu");
@@ -340,8 +369,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             int x = Integer.parseInt(xCoordinate.getText());
             int y = Integer.parseInt(yCoordinate.getText());
 
-            DrawableShape shape = shapes.get(0);
-            shape.translate(x, y);
+            selectedShape.translate(x, y);
             updateCanvas();
         });
     }
@@ -356,6 +384,13 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         Alert alert = new Alert(AlertType.ERROR, contentText, ButtonType.OK);
         alert.setTitle("Błąd");
         alert.setHeaderText("Nie udało się otworzyć pliku");
+        alert.show();
+    }
+
+    private static void showAlertWarning(String headerText, String contentText) {
+        Alert alert = new Alert(AlertType.WARNING, contentText, ButtonType.OK);
+        alert.setTitle("Błąd");
+        alert.setHeaderText(headerText);
         alert.show();
     }
 
