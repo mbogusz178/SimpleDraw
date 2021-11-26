@@ -12,7 +12,6 @@ import javafx.scene.shape.Polygon;
 import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
 
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -89,6 +88,11 @@ public class DrawableTriangle implements DrawableShape {
     }
 
     @Override
+    public void rotate(int angle) {
+        triangle.setRotate(angle);
+    }
+
+    @Override
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
         int factorX = edge.getHorizontal() == HorizontalDirection.RIGHT ? 1 : -1;
         int factorY = edge.getVertical() == VerticalDirection.DOWN ? 1 : -1;
@@ -118,6 +122,23 @@ public class DrawableTriangle implements DrawableShape {
             points.set(3, newY + actualHeight);
             points.set(5, newY + actualHeight);
         }
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
+        ObservableList<Double> points = triangle.getPoints();
+        theoreticalWidth *= factor;
+        double newX = startingPointX + theoreticalWidth;
+        theoreticalHeight *= factor;
+        double newY = startingPointY + theoreticalHeight;
+        double actualWidth = Math.abs(theoreticalWidth);
+        double actualHeight = Math.abs(theoreticalHeight);
+        points.set(0, newX + actualWidth / 2.0);
+        points.set(1, newY);
+        points.set(2, newX);
+        points.set(3, newY + actualHeight);
+        points.set(4, newX + actualWidth);
+        points.set(5, newY + actualHeight);
     }
 
     @Override

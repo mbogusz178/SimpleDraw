@@ -7,10 +7,10 @@ import javafx.geometry.VerticalDirection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.transform.Rotate;
 import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class DrawableRectangle implements DrawableShape {
 
@@ -113,6 +113,24 @@ public class DrawableRectangle implements DrawableShape {
             rect.setX(newX);
         if(edge.getVertical() != null)
             rect.setY(newY);
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
+        theoreticalWidth *= factor;
+        rect.setWidth(Math.abs(theoreticalWidth));
+        theoreticalHeight *= factor;
+        rect.setHeight(Math.abs(theoreticalHeight));
+    }
+
+    @Override
+    public void rotate(int angle) {
+        Rotate rotate = new Rotate();
+        rotate.setAngle(angle);
+        rect.setFill(color);
+        rotate.setPivotX(rect.getX());
+        rotate.setPivotY(rect.getY() + theoreticalHeight);
+        rect.getTransforms().addAll(rotate);
     }
 
     @Override

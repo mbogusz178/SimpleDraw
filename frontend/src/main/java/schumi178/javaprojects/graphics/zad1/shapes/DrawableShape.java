@@ -51,6 +51,8 @@ public interface DrawableShape {
     boolean containsPoint(double x, double y);
     void translate(double x, double y);
     void resize(double x, double y, double newMouseX, double newMouseY, Edge edge);
+    void scaleByFactor(double factor);
+    void rotate(int angle);
     void setColor(Color color);
     void updateStartingPoint();
     byte[] serialize();

@@ -61,7 +61,7 @@ public class BezierCurve implements DrawableShape {
     @Override
     public void draw(GraphicsContext context) {
         context.setFill(color);
-        for(List<Double> coords: bezier2D(wayPoints, 1000)) {
+        for(List<Double> coords: bezier2D(wayPoints, 3000)) {
             context.fillRect(coords.get(0), coords.get(1), 1, 1);
         }
     }
@@ -143,6 +143,16 @@ public class BezierCurve implements DrawableShape {
             return;
         }
         oldPointZeroCache = null;
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
+
+    }
+
+    @Override
+    public void rotate(int angle) {
+
     }
 
     @Override

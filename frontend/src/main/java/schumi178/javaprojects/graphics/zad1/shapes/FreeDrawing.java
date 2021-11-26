@@ -2,7 +2,6 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.BoundingBox;
@@ -13,9 +12,7 @@ import javafx.scene.shape.Line;
 import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Consumer;
 
 public class FreeDrawing implements DrawableShape {
@@ -69,6 +66,16 @@ public class FreeDrawing implements DrawableShape {
 
     @Override
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
+
+    }
+
+    @Override
+    public void rotate(int angle) {
+
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
 
     }
 

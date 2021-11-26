@@ -5,10 +5,10 @@ import javafx.geometry.Bounds;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.transform.Rotate;
 import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class DrawableLine implements DrawableShape {
 
@@ -44,6 +44,21 @@ public class DrawableLine implements DrawableShape {
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
         line.setEndX(newMouseX);
         line.setEndY(newMouseY);
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
+        line.setEndX(line.getEndX() * factor);
+        line.setEndY(line.getEndY() * factor);
+    }
+
+    @Override
+    public void rotate(int angle) {
+        Rotate rotate = new Rotate();
+        rotate.setAngle(angle);
+        rotate.setPivotX(line.getStartX());
+        rotate.setPivotY(line.getStartY());
+        line.getTransforms().add(rotate);
     }
 
     @Override

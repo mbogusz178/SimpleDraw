@@ -422,6 +422,68 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     }
 
     @FXML
+    private void scaleByFactor() {
+        if(selectedShape == null) {
+            showAlertWarning("Nie można wykonać przekształcenia", "Nie wybrano kształtu!");
+            return;
+        }
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Skalowanie");
+        dialog.setHeaderText("Skaluj");
+        dialog.setContentText("Podaj mnożnik o który chcesz przeskalować figurę:");
+
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(s -> {
+            double factor = Double.parseDouble(s);
+
+            if (factor <= 0) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Błąd");
+                alert.setHeaderText("Nieprawidłowy mnożnik");
+                alert.setContentText("Mnożnik powinien być większy od 0 jeśli chcesz pomniejszyć figurę i większy od 1 jeśli chcesz ją powiększyć.");
+
+                alert.showAndWait();
+                return;
+            }
+
+            selectedShape.scaleByFactor(factor);
+            selectedShape.draw(canvas.getGraphicsContext2D());
+            updateCanvas();
+        });
+    }
+
+    @FXML
+    private void rotateByAngle() {
+        if(selectedShape == null) {
+            showAlertWarning("Nie można wykonać przekształcenia", "Nie wybrano kształtu!");
+            return;
+        }
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Obracanie");
+        dialog.setHeaderText("Obróć o ilość stopni");
+        dialog.setContentText("Podaj kąt o który chcesz obrócić figurę:");
+
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(s -> {
+            int angle = Integer.parseInt(s);
+
+            if (angle <= 0) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Błąd");
+                alert.setHeaderText("Nieprawidłowy kąt");
+                alert.setContentText("Kąt powinien być większy od 0.");
+
+                alert.showAndWait();
+                return;
+            }
+
+            selectedShape.rotate(angle);
+            selectedShape.draw(canvas.getGraphicsContext2D());
+            updateCanvas();
+        });
+    }
+
+    @FXML
     private void onClear() {
         shapes.clear();
         updateCanvas();

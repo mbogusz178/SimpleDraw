@@ -7,10 +7,10 @@ import javafx.geometry.VerticalDirection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.transform.Rotate;
 import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class DrawableOval implements DrawableShape {
 
@@ -69,6 +69,25 @@ public class DrawableOval implements DrawableShape {
             oval.setRadiusY(Math.abs(theoreticalRadiusY) / 2.0);
             oval.setCenterY(oval.getCenterY() + y / 2.0);
         }
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
+        theoreticalRadiusX *= factor;
+        oval.setRadiusX(Math.abs(theoreticalRadiusX) / 2.0);
+        theoreticalRadiusY *= factor;
+        oval.setRadiusY(Math.abs(theoreticalRadiusY) / 2.0);
+        oval.setCenterX(oval.getCenterX());
+        oval.setCenterY(oval.getCenterY());
+    }
+
+    @Override
+    public void rotate(int angle) {
+        Rotate rotate = new Rotate();
+        rotate.setAngle(angle);
+//        rotate.setPivotX(line.getStartX());
+//        rotate.setPivotY(line.getStartY());
+        oval.getTransforms().addAll(rotate);
     }
 
     @Override

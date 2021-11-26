@@ -69,6 +69,16 @@ public class WritableText implements DrawableShape {
     }
 
     @Override
+    public void rotate(int angle) {
+
+    }
+
+    @Override
+    public void scaleByFactor(double factor) {
+
+    }
+
+    @Override
     public void setColor(Color color) {
         this.color = color;
     }
