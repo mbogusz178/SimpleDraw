@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/bezier.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +150,7 @@
       <workItem from="1637678432706" duration="8325000" />
       <workItem from="1637789846694" duration="2398000" />
       <workItem from="1637883513474" duration="2509000" />
-      <workItem from="1637915695546" duration="9339000" />
+      <workItem from="1637915695546" duration="14223000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -197,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637786012465</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Taktyczny commit, rysowanie krzywej Beziera i trochę skalowania (trzeba dopracować)">
+      <created>1637940733788</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637940733788</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +224,8 @@
     <MESSAGE value="Phansalkar i obrazy testowe" />
     <MESSAGE value="Refaktoring filtrów opartych na Niblacku" />
     <MESSAGE value="Poprawki w kodzie krzywej Beziera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poprawki w kodzie krzywej Beziera" />
+    <MESSAGE value="Taktyczny commit, rysowanie krzywej Beziera i trochę skalowania (trzeba dopracować)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Taktyczny commit, rysowanie krzywej Beziera i trochę skalowania (trzeba dopracować)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

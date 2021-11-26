@@ -12,6 +12,10 @@ public class BezierCurve implements DrawableShape {
 
     private final List<Point2D> wayPoints = new ArrayList<>();
     private Color color;
+    private double startingPointX;
+    private double startingPointY;
+    private double maxX;
+    private double maxY;
 
     public Color getColor() {
         return color;
@@ -69,21 +73,37 @@ public class BezierCurve implements DrawableShape {
     @Override
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
         Bounds bounds = getBounds();
-        for(int i = 0; i < wayPoints.size(); i++) {
-            if (edge.getHorizontal() != null) {
-                Point2D oldPoint = wayPoints.get(i);
-                double numerator = oldPoint.getX() - bounds.getMinX();
-                double denominator = bounds.getMaxX() - bounds.getMinX();
-                double percentDistance;
-                if(denominator <= 1) {
-                    percentDistance = 0;
-                } else {
-                    percentDistance = edge.getHorizontal() == HorizontalDirection.LEFT ? 1 - numerator / denominator : numerator / denominator;
-                }
-                Point2D newPoint = new Point2D(oldPoint.getX() + percentDistance * x, oldPoint.getY());
-                wayPoints.set(i, newPoint);
-            }
+        int factorX = edge.getHorizontal() == HorizontalDirection.RIGHT ? 1 : -1;
+        int factorY = edge.getVertical() == VerticalDirection.DOWN ? 1 : -1;
+        Point2D origin = new Point2D(edge.getHorizontal() == HorizontalDirection.RIGHT ? startingPointX : maxX,
+                edge.getVertical() == VerticalDirection.DOWN ? startingPointY : maxY);
+        Point2D oldPoint = new Point2D(newMouseX - x, newMouseY - y);
+        double sx = 1, sy = 1;
+        if (edge.getHorizontal() != null) {
+            sx = (newMouseX - origin.getX()) / (oldPoint.getX() - origin.getX());
+//                double numerator = oldPoint.getX() - bounds.getMinX();
+//                double denominator = bounds.getMaxX() - bounds.getMinX();
+//                double percentDistance;
+//                if(denominator <= 1) {
+//                    percentDistance = 0;
+//                } else {
+//                    percentDistance = edge.getHorizontal() == HorizontalDirection.LEFT ? 1 - numerator / denominator : numerator / denominator;
+//                }
+//                Point2D newPoint = new Point2D(oldPoint.getX() + percentDistance * x, oldPoint.getY());
+//                wayPoints.set(i, newPoint);
         }
+        if(edge.getVertical() != null) {
+            sy = (newMouseY - origin.getY()) / (oldPoint.getY() - origin.getY());
+        }
+        System.out.println("origin: (" + origin.getX() + ", " + origin.getY() + ")");
+        for(int i = 0; i < wayPoints.size(); i++) {
+            double newPointX = origin.getX() + (wayPoints.get(i).getX() - origin.getX()) * sx;
+            double newPointY = origin.getY() + (wayPoints.get(i).getY() - origin.getY()) * sy;
+            Point2D newPoint = new Point2D(newPointX, newPointY);
+            System.out.print(i + ": (" + wayPoints.get(i).getX() + ", " + wayPoints.get(i).getY() + "), ");
+            wayPoints.set(i, newPoint);
+        }
+        System.out.println();
     }
 
     @Override
@@ -93,11 +113,16 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public void updateStartingPoint() {
-
+        Bounds bounds = getBounds();
+        startingPointX = bounds.getMinX();
+        startingPointY = bounds.getMinY();
+        maxX = bounds.getMaxX();
+        maxY = bounds.getMaxY();
     }
 
     public void addWaypoint(double x, double y) {
         wayPoints.add(new Point2D(x, y));
+        updateStartingPoint();
     }
 
     @Override
