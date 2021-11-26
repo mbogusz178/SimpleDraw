@@ -1,13 +1,21 @@
 package schumi178.javaprojects.graphics.zad1.shapes;
 
-import javafx.geometry.Bounds;
+import javafx.geometry.*;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class BezierCurve implements DrawableShape {
     private static final Map<NewtonPair, Double> newtonCache = new HashMap<>();
+
+    private final List<Point2D> wayPoints = new ArrayList<>();
+    private Color color;
+
+    public Color getColor() {
+        return color;
+    }
 
     private static class NewtonPair {
         private final int n;
@@ -42,7 +50,10 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public void draw(GraphicsContext context) {
-
+        context.setFill(color);
+        for(List<Double> coords: bezier2D(wayPoints, 200)) {
+            context.fillRect(coords.get(0), coords.get(1), 1, 1);
+        }
     }
 
     @Override
@@ -57,17 +68,36 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
-
+        Bounds bounds = getBounds();
+        for(int i = 0; i < wayPoints.size(); i++) {
+            if (edge.getHorizontal() != null) {
+                Point2D oldPoint = wayPoints.get(i);
+                double numerator = oldPoint.getX() - bounds.getMinX();
+                double denominator = bounds.getMaxX() - bounds.getMinX();
+                double percentDistance;
+                if(denominator <= 1) {
+                    percentDistance = 0;
+                } else {
+                    percentDistance = edge.getHorizontal() == HorizontalDirection.LEFT ? 1 - numerator / denominator : numerator / denominator;
+                }
+                Point2D newPoint = new Point2D(oldPoint.getX() + percentDistance * x, oldPoint.getY());
+                wayPoints.set(i, newPoint);
+            }
+        }
     }
 
     @Override
     public void setColor(Color color) {
-
+        this.color = color;
     }
 
     @Override
     public void updateStartingPoint() {
 
+    }
+
+    public void addWaypoint(double x, double y) {
+        wayPoints.add(new Point2D(x, y));
     }
 
     @Override
@@ -77,7 +107,15 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public Bounds getBounds() {
-        return null;
+        List<Double> xCoords = wayPoints.stream().map(Point2D::getX).collect(Collectors.toList());
+        List<Double> yCoords = wayPoints.stream().map(Point2D::getY).collect(Collectors.toList());
+        double minX = Collections.min(xCoords);
+        double minY = Collections.min(yCoords);
+        double maxX = Collections.max(xCoords);
+        double maxY = Collections.max(yCoords);
+        double width = maxX - minX;
+        double height = maxY - minY;
+        return new BoundingBox(minX, minY, width, height);
     }
 
     private double calculateNewton(int n, int k) {
@@ -108,13 +146,13 @@ public class BezierCurve implements DrawableShape {
         return calculateNewton(n, i) * Math.pow(t, i) * Math.pow((1.0 - t), (n - i));
     }
 
-    private List<Double> calculateCoordinates(double[][] points, int degree, double t) {
+    private List<Double> calculateCoordinates(List<Point2D> points, int degree, double t) {
         double x = 0.0;
         double y = 0.0;
 
         for (int i = 0; i < degree + 1; i++) {
-            x += points[i][0] * bernstein(degree, i, t);
-            y += points[i][1] * bernstein(degree, i, t);
+            x += points.get(i).getX() * bernstein(degree, i, t);
+            y += points.get(i).getY() * bernstein(degree, i, t);
         }
 
         List<Double> coordinates = new ArrayList<>();
@@ -124,9 +162,9 @@ public class BezierCurve implements DrawableShape {
         return coordinates;
     }
 
-    public List<List<Double>> bezier2D(double[][] points, int noOfSegments) {
+    public List<List<Double>> bezier2D(List<Point2D> points, int noOfSegments) {
         List<List<Double>> curve = new ArrayList<>();
-        int degree = points.length - 1;
+        int degree = points.size() - 1;
 
         double step = 1.0 / noOfSegments;
 

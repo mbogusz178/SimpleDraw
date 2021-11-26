@@ -12,11 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -35,6 +32,7 @@ import javafx.stage.WindowEvent;
 import schumi178.javaprojects.graphics.zad1.event.ToolUseEvent;
 import schumi178.javaprojects.graphics.zad1.exception.BrokenFileException;
 import schumi178.javaprojects.graphics.zad1.io.*;
+import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
 import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
 import schumi178.javaprojects.graphics.zad1.threedimensions.RGBCubeApp;
 import schumi178.javaprojects.graphics.zad1.tools.*;
@@ -71,9 +69,15 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private RadioButton toggleToolResize;
     @FXML
     private RadioButton toggleToolText;
+    @FXML
+    private RadioButton toggleToolBezier;
 
     @FXML
     private ColorPicker drawingColorPicker;
+    @FXML
+    private Label curveDegreeLabel;
+    @FXML
+    private Spinner<Integer> curveDegreeSpinner;
 
     private Tool currentTool;
     private double mousePressedX;
@@ -205,6 +209,16 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         toolTextStyleClass.remove("radio-button");
         toolTextStyleClass.add("toggle-button");
         toggleToolText.setGraphic(iconText);
+
+        Image imageBezier = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/bezier.png")));
+        ImageView iconBezier = new ImageView(imageBezier);
+        ObservableList<String> toolBezierStyleClass = toggleToolBezier.getStyleClass();
+        toolBezierStyleClass.remove("radio-button");
+        toolBezierStyleClass.add("toggle-button");
+        toggleToolBezier.setGraphic(iconBezier);
+
+        curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
+        curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
     }
 
     public void updateCanvas() {
@@ -260,8 +274,16 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     }
 
     @FXML
+    private void onSelectBezier() { currentTool = new ToolBezierCurve(); }
+
+    @FXML
     private void onSelectFree() {
         currentTool = new ToolDrawFree();
+        BezierCurve curve = new BezierCurve();
+        curve.addWaypoint(canvas.getWidth() / 2.0 - 30, canvas.getHeight() / 2.0 + 30);
+        curve.addWaypoint(canvas.getWidth() / 2.0, canvas.getHeight() / 2.0 - 30);
+        curve.addWaypoint(canvas.getWidth() / 2.0 + 30, canvas.getHeight() / 2.0 + 30);
+        shapes.add(curve);
     }
 
     @FXML
