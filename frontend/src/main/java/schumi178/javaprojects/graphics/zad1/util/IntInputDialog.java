@@ -4,7 +4,7 @@ import javafx.scene.control.*;
 
 public class IntInputDialog extends TextInputDialog {
 
-    private static class IntTextFormatter extends TextFormatter<String> {
+    public static class IntTextFormatter extends TextFormatter<String> {
 
         public IntTextFormatter() {
             super(value -> {

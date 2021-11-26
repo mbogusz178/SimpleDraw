@@ -90,7 +90,7 @@
                   <ColorPicker fx:id="drawingColorPicker" />
                   <Button mnemonicParsing="false" onAction="#onChooseColor" text="Wybierz kolor" />
                   <Label fx:id="curveDegreeLabel" text="Stopień krzywej:" visible="false" />
-                  <Spinner fx:id="curveDegreeSpinner" editable="true" visible="false" />
+                  <Spinner fx:id="curveDegreeSpinner" visible="false" />
                    <Button mnemonicParsing="false" onAction="#moveByCoordinates" text="Przesuń tekstowo" />
                   <Pane fx:id="toolbarFiller" prefHeight="0.0" prefWidth="0.0" />
                   <Button mnemonicParsing="false" onAction="#onClear" text="Wyczyść" />

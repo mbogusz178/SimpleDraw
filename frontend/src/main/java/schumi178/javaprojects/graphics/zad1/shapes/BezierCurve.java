@@ -62,19 +62,30 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public boolean containsPoint(double x, double y) {
-        return false;
+        return getBounds().contains(x, y);
+    }
+
+    public void setWaypoint(int i, Point2D point) {
+        wayPoints.set(i, point);
+    }
+
+    public void setLastWaypoint(Point2D point) {
+        setWaypoint(wayPoints.size() - 1, point);
     }
 
     @Override
     public void translate(double x, double y) {
-
+        for(int i = 0; i < wayPoints.size(); i++) {
+            Point2D point = wayPoints.get(i);
+            double newX = point.getX() + x;
+            double newY = point.getY() + y;
+            Point2D newPoint = new Point2D(newX, newY);
+            wayPoints.set(i, newPoint);
+        }
     }
 
     @Override
     public void resize(double x, double y, double newMouseX, double newMouseY, Edge edge) {
-        Bounds bounds = getBounds();
-        int factorX = edge.getHorizontal() == HorizontalDirection.RIGHT ? 1 : -1;
-        int factorY = edge.getVertical() == VerticalDirection.DOWN ? 1 : -1;
         Point2D origin = new Point2D(edge.getHorizontal() == HorizontalDirection.RIGHT ? startingPointX : maxX,
                 edge.getVertical() == VerticalDirection.DOWN ? startingPointY : maxY);
         Point2D oldPoint = new Point2D(newMouseX - x, newMouseY - y);

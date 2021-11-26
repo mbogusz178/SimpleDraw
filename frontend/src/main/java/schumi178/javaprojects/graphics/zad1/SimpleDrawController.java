@@ -15,7 +15,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -35,16 +34,22 @@ import javafx.stage.WindowEvent;
 import javafx.util.Pair;
 import schumi178.javaprojects.graphics.zad1.event.ToolUseEvent;
 import schumi178.javaprojects.graphics.zad1.exception.BrokenFileException;
-import schumi178.javaprojects.graphics.zad1.io.*;
+import schumi178.javaprojects.graphics.zad1.io.FileLoader;
+import schumi178.javaprojects.graphics.zad1.io.PortableAnymapReader;
+import schumi178.javaprojects.graphics.zad1.io.PortableAnymapWriter;
 import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
 import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
 import schumi178.javaprojects.graphics.zad1.threedimensions.RGBCubeApp;
 import schumi178.javaprojects.graphics.zad1.tools.*;
+import schumi178.javaprojects.graphics.zad1.util.IntInputDialog;
 
 import javax.imageio.ImageIO;
 import java.io.*;
 import java.net.URL;
-import java.util.*;
+import java.util.ListIterator;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 public class SimpleDrawController implements Initializable, ListChangeListener<DrawableShape>, ChangeListener<Number> {
 
@@ -91,7 +96,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     @FXML
     private void onCanvasMoved(MouseEvent event) {
-        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty());
+        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty(), curveDegreeSpinner.getValue());
         currentTool.onLeftMoved(toolEvent);
         mousePressedX = event.getX();
         mousePressedY = event.getY();
@@ -99,7 +104,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     @FXML
     private void onCanvasDragged(MouseEvent event) {
-        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty());
+        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty(), curveDegreeSpinner.getValue());
         if(currentTool.onLeftDragged(toolEvent)) updateCanvas();
         mousePressedX = event.getX();
         mousePressedY = event.getY();
@@ -107,7 +112,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     @FXML
     private void onCanvasPressed(MouseEvent event) {
-        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty());
+        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty(), curveDegreeSpinner.getValue());
         if(event.getButton() == MouseButton.PRIMARY) {
             mousePressedX = event.getX();
             mousePressedY = event.getY();
@@ -129,7 +134,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     @FXML
     private void onCanvasReleased(MouseEvent event) {
-        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty());
+        ToolUseEvent toolEvent = new ToolUseEvent(event, drawingColorPicker.getValue(), shapes, mousePressedX, mousePressedY, canvas.cursorProperty(), curveDegreeSpinner.getValue());
         if(event.getButton() == MouseButton.PRIMARY) {
             currentTool.onLeftReleased(toolEvent);
         }
@@ -223,6 +228,9 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
         curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
         curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
+
+        curveDegreeSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1));
+        curveDegreeSpinner.getEditor().setTextFormatter(new IntInputDialog.IntTextFormatter());
     }
 
     public void updateCanvas() {
@@ -278,16 +286,11 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     }
 
     @FXML
-    private void onSelectBezier() { currentTool = new ToolBezierCurve(); }
+    private void onSelectBezier() { currentTool = new ToolBezierCurve(this::updateCanvas); }
 
     @FXML
     private void onSelectFree() {
         currentTool = new ToolDrawFree();
-        BezierCurve curve = new BezierCurve();
-        curve.addWaypoint(canvas.getWidth() / 2.0 - 30, canvas.getHeight() / 2.0 + 30);
-        curve.addWaypoint(canvas.getWidth() / 2.0, canvas.getHeight() / 2.0 - 30);
-        curve.addWaypoint(canvas.getWidth() / 2.0 + 30, canvas.getHeight() / 2.0 + 30);
-        shapes.add(curve);
     }
 
     @FXML

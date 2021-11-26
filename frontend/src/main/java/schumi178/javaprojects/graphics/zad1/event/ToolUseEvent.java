@@ -15,6 +15,7 @@ public class ToolUseEvent {
     private final Point2D oldMousePos;
     private final MouseEvent mouseEvent;
     private final KeyEvent keyEvent;
+    private final int spinnerValue;
     private final ObjectProperty<Cursor> cursor;
 
     public Color getColor() {
@@ -41,13 +42,8 @@ public class ToolUseEvent {
         return keyEvent;
     }
 
-    public ToolUseEvent(MouseEvent mouseEvent, Color color, ObservableList<DrawableShape> shapeList, double oldMouseX, double oldMouseY, ObjectProperty<Cursor> cursor) {
-        this.mouseEvent = mouseEvent;
-        this.color = color;
-        this.shapeList = shapeList;
-        this.oldMousePos = new Point2D(oldMouseX, oldMouseY);
-        this.cursor = cursor;
-        keyEvent = null;
+    public int getSpinnerValue() {
+        return spinnerValue;
     }
 
     public ToolUseEvent(KeyEvent keyEvent, Color color, ObservableList<DrawableShape> shapeList, double oldMouseX, double oldMouseY, ObjectProperty<Cursor> cursor) {
@@ -57,5 +53,16 @@ public class ToolUseEvent {
         this.oldMousePos = new Point2D(oldMouseX, oldMouseY);
         this.cursor = cursor;
         mouseEvent = null;
+        spinnerValue = 0;
+    }
+
+    public ToolUseEvent(MouseEvent mouseEvent, Color color, ObservableList<DrawableShape> shapeList, double oldMouseX, double oldMouseY, ObjectProperty<Cursor> cursor, int spinnerValue) {
+        this.mouseEvent = mouseEvent;
+        this.color = color;
+        this.shapeList = shapeList;
+        this.oldMousePos = new Point2D(oldMouseX, oldMouseY);
+        this.cursor = cursor;
+        this.spinnerValue = spinnerValue;
+        keyEvent = null;
     }
 }
