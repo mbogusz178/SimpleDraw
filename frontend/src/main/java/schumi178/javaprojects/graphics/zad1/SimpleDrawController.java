@@ -302,12 +302,12 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     @FXML
     private void moveByCoordinates() {
-        Dialog<Pair<String, String>> moveToPointDialog = new Dialog<>();
-        moveToPointDialog.setTitle("Przesuwanie do punktu");
-        moveToPointDialog.setHeaderText("Przesuwanie do punktu");
+        Dialog<Pair<String, String>> moveByCoordinatesDialog = new Dialog<>();
+        moveByCoordinatesDialog.setTitle("Przesuwanie do punktu");
+        moveByCoordinatesDialog.setHeaderText("Przesuwanie do punktu");
 
-        ButtonType moveToPointButtonType = new ButtonType("Przesuń", ButtonBar.ButtonData.OK_DONE);
-        moveToPointDialog.getDialogPane().getButtonTypes().addAll(moveToPointButtonType, ButtonType.CANCEL);
+        ButtonType moveByCoordinatesButtonType = new ButtonType("Przesuń", ButtonBar.ButtonData.OK_DONE);
+        moveByCoordinatesDialog.getDialogPane().getButtonTypes().addAll(moveByCoordinatesButtonType, ButtonType.CANCEL);
 
         GridPane gridPane = new GridPane();
         gridPane.setHgap(10);
@@ -321,18 +321,18 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         gridPane.add(new Label("Współrzędna Y"), 0, 1);
         gridPane.add(yCoordinate, 1, 1);
 
-        Node moveToPointButton = moveToPointDialog.getDialogPane().lookupButton(moveToPointButtonType);
-        moveToPointButton.setDisable(true);
+        Node moveByCoordinatesButton = moveByCoordinatesDialog.getDialogPane().lookupButton(moveByCoordinatesButtonType);
+        moveByCoordinatesButton.setDisable(true);
 
         xCoordinate.textProperty().addListener((observableValue, oldValue, newValue) ->
-                moveToPointButton.setDisable(newValue.trim().isEmpty()));
+                moveByCoordinatesButton.setDisable(newValue.trim().isEmpty()));
 
-        moveToPointDialog.getDialogPane().setContent(gridPane);
+        moveByCoordinatesDialog.getDialogPane().setContent(gridPane);
 
-        moveToPointDialog.setResultConverter(buttonType ->
+        moveByCoordinatesDialog.setResultConverter(buttonType ->
                 new Pair<>(xCoordinate.getText(), yCoordinate.getText()));
 
-        Optional<Pair<String, String>> result = moveToPointDialog.showAndWait();
+        Optional<Pair<String, String>> result = moveByCoordinatesDialog.showAndWait();
         result.ifPresent(pair -> {
             int x = Integer.parseInt(xCoordinate.getText());
             int y = Integer.parseInt(yCoordinate.getText());
