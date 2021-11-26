@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolSelect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolModifyBezier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/modify_bezier.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
@@ -154,7 +154,7 @@
       <workItem from="1637678432706" duration="8325000" />
       <workItem from="1637789846694" duration="2398000" />
       <workItem from="1637883513474" duration="2509000" />
-      <workItem from="1637915695546" duration="24496000" />
+      <workItem from="1637915695546" duration="27556000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -226,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637951185899</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Narzędzie wybierania">
+      <created>1637955987125</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637955987125</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +260,8 @@
     <MESSAGE value="Działające skalowanie krzywej Beziera (krawędziami)" />
     <MESSAGE value="Gotowe rysowanie krzywej Beziera" />
     <MESSAGE value="Poprawa liczby segmentów" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poprawa liczby segmentów" />
+    <MESSAGE value="Narzędzie wybierania" />
+    <option name="LAST_COMMIT_MESSAGE" value="Narzędzie wybierania" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

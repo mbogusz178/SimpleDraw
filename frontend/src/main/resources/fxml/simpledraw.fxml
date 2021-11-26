@@ -92,6 +92,11 @@
                         <Tooltip text="Wybór" />
                      </tooltip>
                   </RadioButton>
+                  <RadioButton fx:id="toggleToolModifyBezier" mnemonicParsing="false" onAction="#onSelectModifyBezier" toggleGroup="$tools">
+                     <tooltip>
+                        <Tooltip text="Modyfikacja krzywej Beziera" />
+                     </tooltip>
+                  </RadioButton>
                   <ColorPicker fx:id="drawingColorPicker" />
                   <Button mnemonicParsing="false" onAction="#onChooseColor" text="Wybierz kolor" />
                   <Label fx:id="curveDegreeLabel" text="Stopień krzywej:" visible="false" />

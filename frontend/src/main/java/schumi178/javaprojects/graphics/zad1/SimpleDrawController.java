@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -37,6 +38,7 @@ import schumi178.javaprojects.graphics.zad1.exception.BrokenFileException;
 import schumi178.javaprojects.graphics.zad1.io.FileLoader;
 import schumi178.javaprojects.graphics.zad1.io.PortableAnymapReader;
 import schumi178.javaprojects.graphics.zad1.io.PortableAnymapWriter;
+import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
 import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
 import schumi178.javaprojects.graphics.zad1.threedimensions.RGBCubeApp;
 import schumi178.javaprojects.graphics.zad1.tools.*;
@@ -45,10 +47,7 @@ import schumi178.javaprojects.graphics.zad1.util.IntInputDialog;
 import javax.imageio.ImageIO;
 import java.io.*;
 import java.net.URL;
-import java.util.ListIterator;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SimpleDrawController implements Initializable, ListChangeListener<DrawableShape>, ChangeListener<Number> {
 
@@ -81,6 +80,8 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private RadioButton toggleToolBezier;
     @FXML
     private RadioButton toggleToolSelect;
+    @FXML
+    private RadioButton toggleToolModifyBezier;
 
     @FXML
     private ColorPicker drawingColorPicker;
@@ -95,6 +96,8 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private final ObservableList<DrawableShape> shapes = FXCollections.observableArrayList();
     private DrawableShape selectedResizeShape = null;
     private DrawableShape selectedShape = null;
+    private BezierCurve hoveredModifyingBezierCurve = null;
+    private int currentBezierCurveWaypointIndex = -1;
 
     @FXML
     private void onCanvasMoved(MouseEvent event) {
@@ -149,6 +152,16 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     private void updateCanvasWithSelection(DrawableShape shape) {
         selectedShape = shape;
+        updateCanvas();
+    }
+
+    private void updateWithHoveringBezierCurve(BezierCurve curve) {
+        hoveredModifyingBezierCurve = curve;
+        updateCanvas();
+    }
+
+    private void updateWithHoveringBezierWaypointIndex(int index) {
+        currentBezierCurveWaypointIndex = index;
         updateCanvas();
     }
 
@@ -240,6 +253,13 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         toolSelectStyleClass.add("toggle-button");
         toggleToolSelect.setGraphic(iconSelect);
 
+        Image imageModifyBezier = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/modify_bezier.png")));
+        ImageView iconModifyBezier = new ImageView(imageModifyBezier);
+        ObservableList<String> toolModifyBezierStyleClass = toggleToolModifyBezier.getStyleClass();
+        toolModifyBezierStyleClass.remove("radio-button");
+        toolModifyBezierStyleClass.add("toggle-button");
+        toggleToolModifyBezier.setGraphic(iconModifyBezier);
+
         curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
         curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
 
@@ -268,6 +288,30 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             ctx.setLineDashes(2.0);
             ctx.setStroke(Color.FORESTGREEN);
             ctx.strokeRect(selectedBounds.getMinX(), selectedBounds.getMinY(), selectedBounds.getWidth(), selectedBounds.getHeight());
+        }
+        if(hoveredModifyingBezierCurve != null) {
+            Bounds selectedBounds = hoveredModifyingBezierCurve.getBounds();
+            ctx.setLineWidth(1.0);
+            ctx.setLineDashes(2.0);
+            ctx.setStroke(Color.BLACK);
+            ctx.strokeRect(selectedBounds.getMinX(), selectedBounds.getMinY(), selectedBounds.getWidth(), selectedBounds.getHeight());
+            List<Point2D> waypoints = hoveredModifyingBezierCurve.getWayPoints();
+            for(int i = 0; i < waypoints.size(); i++) {
+                if(i != currentBezierCurveWaypointIndex) {
+                    Point2D waypoint = waypoints.get(i);
+                    ctx.setLineWidth(1.0);
+                    ctx.setLineDashes(2.0);
+                    ctx.setStroke(Color.BLACK);
+                    ctx.strokeRect(waypoint.getX() - 10, waypoint.getY() - 10, 20, 20);
+                }
+            }
+            if(currentBezierCurveWaypointIndex >= 0) {
+                Point2D waypoint = hoveredModifyingBezierCurve.getWayPoints().get(currentBezierCurveWaypointIndex);
+                ctx.setLineWidth(1.0);
+                ctx.setLineDashes(2.0);
+                ctx.setStroke(Color.GOLDENROD);
+                ctx.strokeRect(waypoint.getX() - 10, waypoint.getY() - 10, 20, 20);
+            }
         }
     }
 
@@ -311,6 +355,9 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     @FXML
     private void onSelectSelect() { currentTool = new ToolSelect(this::updateCanvasWithSelection); }
+
+    @FXML
+    private void onSelectModifyBezier() { currentTool = new ToolModifyBezier(this::updateWithHoveringBezierCurve, this::updateWithHoveringBezierWaypointIndex); }
 
     @FXML
     private void onSelectFree() {

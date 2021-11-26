@@ -22,6 +22,10 @@ public class BezierCurve implements DrawableShape {
         return color;
     }
 
+    public List<Point2D> getWayPoints() {
+        return wayPoints;
+    }
+
     private static class NewtonPair {
         private final int n;
         private final int k;
