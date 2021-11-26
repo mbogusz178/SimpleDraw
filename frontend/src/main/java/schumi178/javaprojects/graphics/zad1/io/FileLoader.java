@@ -2,6 +2,7 @@ package schumi178.javaprojects.graphics.zad1.io;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
@@ -116,6 +117,27 @@ public class FileLoader {
         newList.add(writable);
     }
 
+    private void proceedWithBezier(ObservableList<DrawableShape> newList) throws BrokenFileException, IOException {
+        int waypointsSize = SerializeUtils.getIntFromStream(inputStream);
+        BezierCurve curve = new BezierCurve();
+        for(int i = 0; i < waypointsSize; i++) {
+            double newX = SerializeUtils.getIntFromStream(inputStream);
+            double newY = SerializeUtils.getIntFromStream(inputStream);
+            curve.addWaypoint(newX, newY);
+        }
+        double startingPointX = SerializeUtils.getIntFromStream(inputStream);
+        double startingPointY = SerializeUtils.getIntFromStream(inputStream);
+        Color color = SerializeUtils.getColorFromStream(inputStream);
+        double maxX = SerializeUtils.getIntFromStream(inputStream);
+        double maxY = SerializeUtils.getIntFromStream(inputStream);
+        curve.setStartingPointX(startingPointX);
+        curve.setStartingPointY(startingPointY);
+        curve.setColor(color);
+        curve.setMaxX(maxX);
+        curve.setMaxY(maxY);
+        newList.add(curve);
+    }
+
     public ObservableList<DrawableShape> load() throws IOException, BrokenFileException {
         ObservableList<DrawableShape> newList = FXCollections.observableArrayList();
         byte[] openingCode = inputStream.readNBytes(3);
@@ -144,6 +166,9 @@ public class FileLoader {
                     break;
                 case 5:
                     proceedWithText(newList);
+                    break;
+                case 6:
+                    proceedWithBezier(newList);
                     break;
                 default:
                     throw new BrokenFileException();

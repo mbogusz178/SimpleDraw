@@ -22,6 +22,7 @@ public class BezierStateNotCreated implements BezierState {
         ObservableList<DrawableShape> shapes = event.getShapeList();
         for(int i = 0; i < 2; i++)
             curve.addWaypoint(mouseEvent.getX(), mouseEvent.getY());
+        curve.setColor(event.getColor());
         shapes.add(curve);
         context.setState(new BezierStateInProgress(context, event.getSpinnerValue()));
         return curve;

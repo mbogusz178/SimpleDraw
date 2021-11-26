@@ -3,6 +3,7 @@ package schumi178.javaprojects.graphics.zad1.shapes;
 import javafx.geometry.*;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -149,6 +150,26 @@ public class BezierCurve implements DrawableShape {
         this.color = color;
     }
 
+    public void setStartingPointX(double startingPointX) {
+        this.startingPointX = startingPointX;
+    }
+
+    public void setStartingPointY(double startingPointY) {
+        this.startingPointY = startingPointY;
+    }
+
+    public void setMaxX(double maxX) {
+        this.maxX = maxX;
+    }
+
+    public void setMaxY(double maxY) {
+        this.maxY = maxY;
+    }
+
+    public void setOldPointZeroCache(Point2D oldPointZeroCache) {
+        this.oldPointZeroCache = oldPointZeroCache;
+    }
+
     @Override
     public void updateStartingPoint() {
         Bounds bounds = getBounds();
@@ -165,7 +186,23 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public byte[] serialize() {
-        return new byte[0];
+        byte[] startCode = new byte[1];
+        startCode[0] = 6;
+        byte[] waypointsSize = SerializeUtils.intToByte(wayPoints.size());
+        List<byte[]> waypointsBytes = new ArrayList<>();
+        for(Point2D point: wayPoints) {
+            byte[] waypointX = SerializeUtils.intToByte((int)point.getX());
+            byte[] waypointY = SerializeUtils.intToByte((int)point.getY());
+            waypointsBytes.add(waypointX);
+            waypointsBytes.add(waypointY);
+        }
+        byte[] waypointsBytesJoined = SerializeUtils.joinBytes(waypointsBytes);
+        byte[] startingPointXBytes = SerializeUtils.intToByte((int)startingPointX);
+        byte[] startingPointYBytes = SerializeUtils.intToByte((int)startingPointY);
+        byte[] colorBytes = SerializeUtils.colorToByte(color);
+        byte[] maxXBytes = SerializeUtils.intToByte((int)maxX);
+        byte[] maxYBytes = SerializeUtils.intToByte((int)maxY);
+        return SerializeUtils.joinBytes(List.of(startCode, waypointsSize, waypointsBytesJoined, startingPointXBytes, startingPointYBytes, colorBytes, maxXBytes, maxYBytes));
     }
 
     @Override
