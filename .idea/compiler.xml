@@ -10,6 +10,7 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
         </processorPath>
+        <module name="analysis" />
         <module name="simpledraw-3d" />
         <module name="simpledraw-assembly" />
         <module name="simpledraw-frontend" />
@@ -17,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="analysis" target="11" />
       <module name="simpledraw-3d" target="11" />
       <module name="simpledraw-assembly" target="11" />
       <module name="simpledraw-filter" target="11" />

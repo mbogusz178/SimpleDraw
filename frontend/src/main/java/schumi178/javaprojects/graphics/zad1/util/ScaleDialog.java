@@ -7,12 +7,12 @@ import javafx.scene.control.DialogPane;
 
 import java.io.IOException;
 
-public class RotateDialog extends Dialog<RotateData> {
-    private double angle;
+public class ScaleDialog extends Dialog<ScaleData> {
+    private double scale;
     private double originX;
     private double originY;
 
-    public RotateDialog() {
+    public ScaleDialog() {
         DialogPane pane = getDialogPane();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/dialog/rotateDialog.fxml"));
         try {
@@ -24,20 +24,20 @@ public class RotateDialog extends Dialog<RotateData> {
         RotateDialogContent controller = loader.getController();
         controller.setAngleListener((observable, oldValue, newValue) -> {
             if(newValue.isEmpty()) {
-                angle = 0;
+                scale = 0;
                 return;
             }
             if(newValue.charAt(0) == '-') {
                 if(newValue.length() < 2) {
-                    angle = 0;
+                    scale = 0;
                     return;
                 }
             }
 
             try {
-                angle = Integer.parseInt(newValue);
+                scale = Integer.parseInt(newValue);
             } catch (NumberFormatException e) {
-                angle = 0;
+                scale = 0;
             }
         });
         controller.setOriginXListener((observable, oldValue, newValue) -> {
@@ -76,13 +76,13 @@ public class RotateDialog extends Dialog<RotateData> {
                 originY = 0;
             }
         });
-        controller.setInputValueLabel("Podaj kąt obrotu:");
+        controller.setInputValueLabel("Podaj mnożnik:");
         getDialogPane().getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.OK);
         setResultConverter(resultType -> {
             if(resultType == ButtonType.CANCEL) {
                 return null;
             } else {
-                return new RotateData(angle, originX, originY);
+                return new ScaleData(scale, originX, originY);
             }
         });
     }

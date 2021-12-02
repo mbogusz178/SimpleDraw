@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/analysis/analysis.iml" filepath="$PROJECT_DIR$/analysis/analysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/3d/simpledraw-3d.iml" filepath="$PROJECT_DIR$/3d/simpledraw-3d.iml" />
       <module fileurl="file://$PROJECT_DIR$/assembly/simpledraw-assembly.iml" filepath="$PROJECT_DIR$/assembly/simpledraw-assembly.iml" />
       <module fileurl="file://$PROJECT_DIR$/filter/simpledraw-filter.iml" filepath="$PROJECT_DIR$/filter/simpledraw-filter.iml" />

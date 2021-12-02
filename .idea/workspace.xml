@@ -5,37 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialogContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog/rotateDialog.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/analysis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/PercentHueDetection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/ColorHSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/ColorRGB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/ColorRange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/SimpleColorHSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/SimpleColorRGB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolRotate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolScale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/ColorHSVAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/ScaleData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/ScaleDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/rotate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/scale.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3d/simpledraw-3d.iml" beforeDir="false" afterPath="$PROJECT_DIR$/3d/simpledraw-3d.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assembly/simpledraw-assembly.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assembly/simpledraw-assembly.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter/simpledraw-filter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/filter/simpledraw-filter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/simpledraw-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/simpledraw-frontend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableOval.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableRectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableTriangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/FreeDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/FreeDrawing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/WritableText.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/WritableText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/IntInputDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/IntInputDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Matrix3.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Matrix3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/ColorAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/ColorRGBAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialogContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialogContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/menu/NoParamFilterMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/menu/NoParamFilterMenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/menu/SingleParamFilterMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/menu/SingleParamFilterMenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog/rotateDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog/rotateDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zad1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zad1.iml" afterDir="false" />
+    </list>
+    <list id="76210a8b-a150-4005-ac91-6f61c59debb5" name="Changes by Patryk" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/ImportFileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/ImportFileViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/importfileview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/importfileview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +53,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="module-info" />
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="module-info" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -68,6 +77,22 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml">
+      <ranges>
+        <range start1="104" end1="104" start2="104" end2="118" changelist="06ba970e-52a4-45e1-9014-ef9c2394ef8e" />
+        <range start1="106" end1="108" start2="120" end2="122" changelist="76210a8b-a150-4005-ac91-6f61c59debb5" />
+        <range start1="110" end1="111" start2="124" end2="126" changelist="06ba970e-52a4-45e1-9014-ef9c2394ef8e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java">
+      <ranges>
+        <range start1="12" end1="12" start2="12" end2="13" changelist="76210a8b-a150-4005-ac91-6f61c59debb5" />
+        <range start1="141" end1="142" start2="142" end2="142" changelist="06ba970e-52a4-45e1-9014-ef9c2394ef8e" />
+        <range start1="164" end1="165" start2="164" end2="174" changelist="76210a8b-a150-4005-ac91-6f61c59debb5" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,6 +128,9 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="schumi178.javaprojects.graphics.zad1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assembly" />
       <recent name="$PROJECT_DIR$" />
@@ -113,6 +141,7 @@
       <recent name="$PROJECT_DIR$/assembly" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="schumi178.javaprojects.graphics.zad1.util" />
       <recent name="schumi178.javaprojects.graphics.zad1.filter" />
     </key>
   </component>
@@ -187,7 +216,8 @@
       <workItem from="1637915695546" duration="39175000" />
       <workItem from="1638030604157" duration="2588000" />
       <workItem from="1638287097711" duration="911000" />
-      <workItem from="1638386561057" duration="15568000" />
+      <workItem from="1638386561057" duration="27577000" />
+      <workItem from="1638475565739" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -287,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637967836895</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Obracanie figury wokół dowolnego punktu">
+      <created>1638462823929</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638462823929</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +354,8 @@
     <MESSAGE value="Modyfikacja krzywej Beziera" />
     <MESSAGE value="Serializacja krzywej Beziera" />
     <MESSAGE value="Obracanie figury (wreszcie xD)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Obracanie figury (wreszcie xD)" />
+    <MESSAGE value="Obracanie figury wokół dowolnego punktu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Obracanie figury wokół dowolnego punktu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -380,5 +418,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Zadanie_1$SimpleDraw.ic" NAME="SimpleDraw Coverage Results" MODIFIED="1638466925280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>schumi178.javaprojects.graphics.zad1.*</FILTER>
+    </SUITE>
   </component>
 </project>

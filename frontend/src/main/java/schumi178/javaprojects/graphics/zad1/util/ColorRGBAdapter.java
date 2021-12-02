@@ -2,11 +2,11 @@ package schumi178.javaprojects.graphics.zad1.util;
 
 import schumi178.javaprojects.graphics.zad1.filter.util.Color;
 
-public class ColorAdapter implements Color {
+public class ColorRGBAdapter implements Color {
 
     private final javafx.scene.paint.Color color;
 
-    public ColorAdapter(javafx.scene.paint.Color color) {
+    public ColorRGBAdapter(javafx.scene.paint.Color color) {
         this.color = color;
     }
 

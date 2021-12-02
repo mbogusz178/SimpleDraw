@@ -5,9 +5,8 @@ import javafx.scene.Node;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.*;
 import schumi178.javaprojects.graphics.zad1.filter.NoParamFilter;
-import schumi178.javaprojects.graphics.zad1.filter.SingleParamFilter;
 import schumi178.javaprojects.graphics.zad1.filter.util.Color;
-import schumi178.javaprojects.graphics.zad1.util.ColorAdapter;
+import schumi178.javaprojects.graphics.zad1.util.ColorRGBAdapter;
 
 import java.util.function.Supplier;
 
@@ -42,11 +41,11 @@ public class NoParamFilterMenuItem extends MenuItem {
         Image image = importedImage.getImage();
         int width = (int)image.getWidth();
         int height = (int)image.getHeight();
-        Color[][] currentImage = new ColorAdapter[width][height];
+        Color[][] currentImage = new ColorRGBAdapter[width][height];
         PixelReader reader = image.getPixelReader();
         for(int i = 0; i < width; i++) {
             for(int j = 0; j < height; j++) {
-                currentImage[i][j] = new ColorAdapter(reader.getColor(i, j));
+                currentImage[i][j] = new ColorRGBAdapter(reader.getColor(i, j));
             }
         }
         Color[][] filtered = filter.transform(currentImage);

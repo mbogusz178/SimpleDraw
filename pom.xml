@@ -13,6 +13,7 @@
         <module>frontend</module>
         <module>assembly</module>
         <module>filter</module>
+        <module>analysis</module>
     </modules>
     <name>Zadanie 1</name>
 

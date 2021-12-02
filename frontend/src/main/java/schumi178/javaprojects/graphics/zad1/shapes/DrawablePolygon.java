@@ -139,7 +139,6 @@ public class DrawablePolygon implements DrawableShape {
             Vector3 vecStart = Vector3.uniform(points.get(i), points.get(i+1));
             Matrix3 rotation = Matrix3.rotation(angle);
             Vector3 result = vecStart.multiplyByMatrix(rotation);
-            System.out.println("Stary: (" + points.get(i) + ", " + points.get(i+1) + "), nowy: (" + result.getX() + ", " + result.getY() + ")");
             points.set(i, result.getX());
             points.set(i+1, result.getY());
         }

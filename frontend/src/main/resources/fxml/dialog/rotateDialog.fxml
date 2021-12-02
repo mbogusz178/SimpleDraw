@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER_LEFT" prefHeight="134.0" prefWidth="300.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schumi178.javaprojects.graphics.zad1.util.RotateDialogContent">
    <children>
-      <Label text="Podaj kąt obrotu:" />
+      <Label fx:id="inputValueLabel" text="Podaj kąt obrotu:" />
       <TextField fx:id="angle" />
       <Label text="Podaj współrzędne środka przekształcenia:" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">

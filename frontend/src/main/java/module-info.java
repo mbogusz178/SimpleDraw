@@ -4,6 +4,7 @@ module graphics.zadone.frontend {
     requires javafx.swing;
     requires graphics.zadone.threedimensions;
     requires graphics.zadone.filter;
+    requires graphics.zadone.analysis;
     requires lombok;
 
     requires org.kordamp.bootstrapfx.core;

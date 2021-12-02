@@ -42,9 +42,7 @@ import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
 import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
 import schumi178.javaprojects.graphics.zad1.threedimensions.RGBCubeApp;
 import schumi178.javaprojects.graphics.zad1.tools.*;
-import schumi178.javaprojects.graphics.zad1.util.IntInputDialog;
-import schumi178.javaprojects.graphics.zad1.util.RotateData;
-import schumi178.javaprojects.graphics.zad1.util.RotateDialog;
+import schumi178.javaprojects.graphics.zad1.util.*;
 
 import javax.imageio.ImageIO;
 import java.io.*;
@@ -86,11 +84,14 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private RadioButton toggleToolModifyBezier;
     @FXML
     private RadioButton toggleToolPolygon;
+    @FXML
+    private RadioButton toggleToolRotate;
+    @FXML
+    private RadioButton toggleToolScale;
 
     @FXML
     private ColorPicker drawingColorPicker;
-    @FXML
-    private Label curveDegreeLabel;
+
     @FXML
     private Spinner<Integer> curveDegreeSpinner;
 
@@ -100,6 +101,8 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private final ObservableList<DrawableShape> shapes = FXCollections.observableArrayList();
     private DrawableShape selectedResizeShape = null;
     private DrawableShape selectedShape = null;
+    private double originX = -1;
+    private double originY = -1;
     private BezierCurve hoveredModifyingBezierCurve = null;
     private int currentBezierCurveWaypointIndex = -1;
 
@@ -170,6 +173,12 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
 
     private void updateWithHoveringBezierWaypointIndex(int index) {
         currentBezierCurveWaypointIndex = index;
+        updateCanvas();
+    }
+
+    private void updateOriginPoint(double originX, double originY) {
+        this.originX = originX;
+        this.originY = originY;
         updateCanvas();
     }
 
@@ -275,8 +284,22 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         toolPolygonStyleClass.add("toggle-button");
         toggleToolPolygon.setGraphic(iconPolygon);
 
-        curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
-        curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
+        Image imageRotate = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/rotate.png")));
+        ImageView iconRotate = new ImageView(imageRotate);
+        ObservableList<String> toolRotateStyleClass = toggleToolRotate.getStyleClass();
+        toolRotateStyleClass.remove("radio-button");
+        toolRotateStyleClass.add("toggle-button");
+        toggleToolRotate.setGraphic(iconRotate);
+
+        Image imageScale = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/scale.png")));
+        ImageView iconScale = new ImageView(imageScale);
+        ObservableList<String> toolScaleStyleClass = toggleToolScale.getStyleClass();
+        toolScaleStyleClass.remove("radio-button");
+        toolScaleStyleClass.add("toggle-button");
+        toggleToolScale.setGraphic(iconScale);
+
+//        curveDegreeLabel.visibleProperty().bind(toggleToolBezier.selectedProperty());
+        curveDegreeSpinner.setDisable(toggleToolBezier.selectedProperty().getValue());
 
         curveDegreeSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1));
         curveDegreeSpinner.getEditor().setTextFormatter(new IntInputDialog.PositiveIntTextFormatter());
@@ -328,6 +351,12 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
                 ctx.strokeRect(waypoint.getX() - 10, waypoint.getY() - 10, 20, 20);
             }
         }
+        if(originX > -1 && originY > -1) {
+            ctx.setLineWidth(1.0);
+            ctx.setLineDashes(2.0);
+            ctx.setStroke(Color.BLACK);
+            ctx.strokeRect(originX - 5, originY - 5, 10, 10);
+        }
     }
 
     @Override
@@ -378,9 +407,17 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
     private void onSelectPolygon() { currentTool = new ToolDrawPolygons(this::updateCanvas); }
 
     @FXML
+    private void onSelectScale() {
+        currentTool = new ToolScale(this::updateOriginPoint);
+    }
+
+    @FXML
     private void onSelectFree() {
         currentTool = new ToolDrawFree();
     }
+
+    @FXML
+    private void onSelectRotate() { currentTool = new ToolRotate(this::updateOriginPoint); }
 
     @FXML
     private void onSelectText() {
@@ -445,27 +482,18 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             showAlertWarning("Nie można wykonać przekształcenia", "Nie wybrano kształtu!");
             return;
         }
-        TextInputDialog dialog = new TextInputDialog();
+        ScaleDialog dialog = new ScaleDialog();
         dialog.setTitle("Skalowanie");
         dialog.setHeaderText("Skaluj");
         dialog.setContentText("Podaj mnożnik o który chcesz przeskalować figurę:");
 
-        Optional<String> result = dialog.showAndWait();
+        Optional<ScaleData> result = dialog.showAndWait();
         result.ifPresent(s -> {
-            double factor = Double.parseDouble(s);
+            double factor = s.getScale();
+            double originX = s.getOriginX();
+            double originY = s.getOriginY();
 
-            if (factor <= 0) {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Błąd");
-                alert.setHeaderText("Nieprawidłowy mnożnik");
-                alert.setContentText("Mnożnik powinien być większy od 0 jeśli chcesz pomniejszyć figurę i większy od 1 jeśli chcesz ją powiększyć.");
-
-                alert.showAndWait();
-                return;
-            }
-
-            selectedShape.scaleByFactor(factor, new Point2D(0, 0));
-            selectedShape.draw(canvas.getGraphicsContext2D());
+            selectedShape.scaleByFactor(factor, new Point2D(originX, originY));
             updateCanvas();
         });
     }
