@@ -27,4 +27,9 @@ public class BezierStateNotCreated implements BezierState {
         context.setState(new BezierStateInProgress(context, event.getSpinnerValue()));
         return curve;
     }
+
+    @Override
+    public boolean allowTextBoxMethod() {
+        return true;
+    }
 }

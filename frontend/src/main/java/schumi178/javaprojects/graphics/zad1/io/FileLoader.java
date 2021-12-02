@@ -138,6 +138,26 @@ public class FileLoader {
         newList.add(curve);
     }
 
+    private void proceedWithPolygon(ObservableList<DrawableShape> newList) throws BrokenFileException, IOException {
+        int pointsSize = SerializeUtils.getIntFromStream(inputStream);
+        DrawablePolygon polygon = new DrawablePolygon();
+        for(int i = 0; i < pointsSize / 2; i++) {
+            polygon.addPoint(new Point2D(SerializeUtils.getIntFromStream(inputStream),
+                    SerializeUtils.getIntFromStream(inputStream)));
+        }
+        double maxX = SerializeUtils.getIntFromStream(inputStream);
+        double maxY = SerializeUtils.getIntFromStream(inputStream);
+        double startingPointX = SerializeUtils.getIntFromStream(inputStream);
+        double startingPointY = SerializeUtils.getIntFromStream(inputStream);
+        Color color = SerializeUtils.getColorFromStream(inputStream);
+        polygon.setMaxX(maxX);
+        polygon.setMaxY(maxY);
+        polygon.setStartingPointX(startingPointX);
+        polygon.setStartingPointY(startingPointY);
+        polygon.setColor(color);
+        newList.add(polygon);
+    }
+
     public ObservableList<DrawableShape> load() throws IOException, BrokenFileException {
         ObservableList<DrawableShape> newList = FXCollections.observableArrayList();
         byte[] openingCode = inputStream.readNBytes(3);
@@ -169,6 +189,9 @@ public class FileLoader {
                     break;
                 case 6:
                     proceedWithBezier(newList);
+                    break;
+                case 7:
+                    proceedWithPolygon(newList);
                     break;
                 default:
                     throw new BrokenFileException();

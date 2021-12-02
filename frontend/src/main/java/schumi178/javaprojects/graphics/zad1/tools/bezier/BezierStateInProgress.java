@@ -28,4 +28,9 @@ public class BezierStateInProgress implements BezierState {
             return null;
         }
     }
+
+    @Override
+    public boolean allowTextBoxMethod() {
+        return false;
+    }
 }

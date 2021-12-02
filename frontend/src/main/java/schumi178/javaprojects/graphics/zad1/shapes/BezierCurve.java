@@ -1,9 +1,12 @@
 package schumi178.javaprojects.graphics.zad1.shapes;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.*;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import schumi178.javaprojects.graphics.zad1.util.Matrix3;
 import schumi178.javaprojects.graphics.zad1.util.SerializeUtils;
+import schumi178.javaprojects.graphics.zad1.util.Vector3;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -147,12 +150,20 @@ public class BezierCurve implements DrawableShape {
 
     @Override
     public void scaleByFactor(double factor, Point2D origin) {
-
+        for (int i = 0; i < wayPoints.size(); i++) {
+            wayPoints.set(i, new Point2D(origin.getX() + (wayPoints.get(i).getX() - origin.getX()) * factor,
+                    origin.getY() + (wayPoints.get(i).getY() - origin.getY()) * factor));
+        }
     }
 
     @Override
     public void rotate(double angle) {
-
+        for(int i = 0; i < wayPoints.size(); i++) {
+            Vector3 vecStart = Vector3.uniform(wayPoints.get(i).getX(), wayPoints.get(i).getY());
+            Matrix3 rotation = Matrix3.rotation(angle);
+            Vector3 result = vecStart.multiplyByMatrix(rotation);
+            wayPoints.set(i, new Point2D(result.getX(), result.getY()));
+        }
     }
 
     @Override

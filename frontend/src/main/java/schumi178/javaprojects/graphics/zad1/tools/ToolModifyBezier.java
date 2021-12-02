@@ -6,8 +6,10 @@ import javafx.scene.input.MouseEvent;
 import schumi178.javaprojects.graphics.zad1.event.ToolUseEvent;
 import schumi178.javaprojects.graphics.zad1.shapes.BezierCurve;
 import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
+import schumi178.javaprojects.graphics.zad1.util.MoveWaypointDialog;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
@@ -70,5 +72,17 @@ public class ToolModifyBezier implements Tool {
     @Override
     public void onLeftReleased(ToolUseEvent event) {
 
+    }
+
+    @Override
+    public void onRightPressed(ToolUseEvent event) {
+        if(currentWaypointIndex >= 0 && currentCurve != null) {
+            MoveWaypointDialog dialog = new MoveWaypointDialog();
+            dialog.setTitle("Przesuń punkt charakterystyczny");
+            dialog.setHeaderText("Przesuwanie punktu charakterystycznego");
+
+            Optional<Point2D> result = dialog.showAndWait();
+            result.ifPresent(s -> currentCurve.setWaypoint(currentWaypointIndex, s));
+        }
     }
 }

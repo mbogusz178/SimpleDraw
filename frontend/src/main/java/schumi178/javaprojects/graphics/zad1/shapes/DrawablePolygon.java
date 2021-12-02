@@ -159,6 +159,22 @@ public class DrawablePolygon implements DrawableShape {
         maxY = bounds.getMaxY();
     }
 
+    public void setMaxX(double maxX) {
+        this.maxX = maxX;
+    }
+
+    public void setMaxY(double maxY) {
+        this.maxY = maxY;
+    }
+
+    public void setStartingPointX(double startingPointX) {
+        this.startingPointX = startingPointX;
+    }
+
+    public void setStartingPointY(double startingPointY) {
+        this.startingPointY = startingPointY;
+    }
+
     @Override
     public byte[] serialize() {
         return new byte[0];

@@ -26,6 +26,7 @@ public class ToolDrawPolygons implements Tool {
             currentPolygon.addPoint(new Point2D(mouseEvent.getX(), mouseEvent.getY()));
         } else {
             currentPolygon = new DrawablePolygon();
+            currentPolygon.setColor(event.getColor());
             currentPolygon.addPoint(new Point2D(mouseEvent.getX(), mouseEvent.getY()));
             event.getShapeList().add(currentPolygon);
         }
