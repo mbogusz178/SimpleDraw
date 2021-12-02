@@ -43,6 +43,8 @@ import schumi178.javaprojects.graphics.zad1.shapes.DrawableShape;
 import schumi178.javaprojects.graphics.zad1.threedimensions.RGBCubeApp;
 import schumi178.javaprojects.graphics.zad1.tools.*;
 import schumi178.javaprojects.graphics.zad1.util.IntInputDialog;
+import schumi178.javaprojects.graphics.zad1.util.RotateData;
+import schumi178.javaprojects.graphics.zad1.util.RotateDialog;
 
 import javax.imageio.ImageIO;
 import java.io.*;
@@ -277,7 +279,7 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
         curveDegreeSpinner.visibleProperty().bind(toggleToolBezier.selectedProperty());
 
         curveDegreeSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1));
-        curveDegreeSpinner.getEditor().setTextFormatter(new IntInputDialog.IntTextFormatter());
+        curveDegreeSpinner.getEditor().setTextFormatter(new IntInputDialog.PositiveIntTextFormatter());
     }
 
     public void updateCanvas() {
@@ -474,26 +476,22 @@ public class SimpleDrawController implements Initializable, ListChangeListener<D
             showAlertWarning("Nie można wykonać przekształcenia", "Nie wybrano kształtu!");
             return;
         }
-        TextInputDialog dialog = new TextInputDialog();
+
+        RotateDialog dialog = new RotateDialog();
+
         dialog.setTitle("Obracanie");
         dialog.setHeaderText("Obróć o ilość stopni");
         dialog.setContentText("Podaj kąt o który chcesz obrócić figurę:");
 
-        Optional<String> result = dialog.showAndWait();
+        Optional<RotateData> result = dialog.showAndWait();
         result.ifPresent(s -> {
-            int angle = Integer.parseInt(s);
+            double angle = s.getAngle();
+            double originX = s.getOriginX();
+            double originY = s.getOriginY();
 
-            if (angle <= 0) {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Błąd");
-                alert.setHeaderText("Nieprawidłowy kąt");
-                alert.setContentText("Kąt powinien być większy od 0.");
-
-                alert.showAndWait();
-                return;
-            }
-
+            selectedShape.translate(-originX, -originY);
             selectedShape.rotate(angle);
+            selectedShape.translate(originX, originY);
             updateCanvas();
         });
     }

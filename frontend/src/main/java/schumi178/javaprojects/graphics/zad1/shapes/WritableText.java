@@ -70,7 +70,7 @@ public class WritableText implements DrawableShape {
     }
 
     @Override
-    public void rotate(int angle) {
+    public void rotate(double angle) {
 
     }
 

@@ -83,7 +83,7 @@ public class DrawableOval implements DrawableShape {
     }
 
     @Override
-    public void rotate(int angle) {
+    public void rotate(double angle) {
         Rotate rotate = new Rotate();
         rotate.setAngle(angle);
 //        rotate.setPivotX(line.getStartX());

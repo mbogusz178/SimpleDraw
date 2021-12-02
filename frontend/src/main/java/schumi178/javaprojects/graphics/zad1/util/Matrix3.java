@@ -18,6 +18,7 @@ public class Matrix3 {
 
     public static Matrix3 rotation(double angle) {
         Matrix3 matrix = new Matrix3();
+        angle = Math.toRadians(angle);
         matrix.set(0, 0, Math.cos(angle));
         matrix.set(1, 0, Math.sin(angle) * -1);
         matrix.set(0, 1, Math.sin(angle));

@@ -89,7 +89,7 @@ public class DrawableTriangle implements DrawableShape {
     }
 
     @Override
-    public void rotate(int angle) {
+    public void rotate(double angle) {
         triangle.setRotate(angle);
     }
 

@@ -9,12 +9,10 @@ import javafx.geometry.VerticalDirection;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
-import javafx.scene.transform.Rotate;
 import schumi178.javaprojects.graphics.zad1.util.Matrix3;
 import schumi178.javaprojects.graphics.zad1.util.Vector3;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -41,6 +39,7 @@ public class DrawablePolygon implements DrawableShape {
 
     public void addPoint(Point2D point) {
         polygon.getPoints().addAll(point.getX(), point.getY());
+        updateStartingPoint();
     }
 
     @Override
@@ -116,8 +115,8 @@ public class DrawablePolygon implements DrawableShape {
         if(hasOnlyZeroes) {
             oldPointZeroCache = oldPoint;
             for(int i = 0; i < polygonPoints.size(); i += 2) {
-                polygonPoints.set(i, oldPolygonPoints.get(i).getX());
-                polygonPoints.set(i+1, oldPolygonPoints.get(i).getY());
+                polygonPoints.set(i, oldPolygonPoints.get(i/2).getX());
+                polygonPoints.set(i+1, oldPolygonPoints.get(i/2).getY());
             }
             return;
         }
@@ -134,11 +133,8 @@ public class DrawablePolygon implements DrawableShape {
     }
 
     @Override
-    public void rotate(int angle) {
+    public void rotate(double angle) {
         ObservableList<Double> points = polygon.getPoints();
-        double avgX = (getBounds().getMaxX() + getBounds().getMinX()) / 2.0;
-        double avgY = (getBounds().getMaxY() + getBounds().getMinY()) / 2.0;
-        translate(-avgX, -avgY);
         for(int i = 0; i < points.size(); i += 2) {
             Vector3 vecStart = Vector3.uniform(points.get(i), points.get(i+1));
             Matrix3 rotation = Matrix3.rotation(angle);
@@ -147,7 +143,6 @@ public class DrawablePolygon implements DrawableShape {
             points.set(i, result.getX());
             points.set(i+1, result.getY());
         }
-        translate(avgX, avgY);
     }
 
     @Override
@@ -160,7 +155,7 @@ public class DrawablePolygon implements DrawableShape {
     public void updateStartingPoint() {
         Bounds bounds = getBounds();
         startingPointX = bounds.getMinX();
-        startingPointY = bounds.getMaxX();
+        startingPointY = bounds.getMinY();
         maxX = bounds.getMaxX();
         maxY = bounds.getMaxY();
     }

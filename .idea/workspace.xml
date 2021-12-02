@@ -5,23 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawPolygons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Matrix3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Vector3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/icons/polygon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/RotateDialogContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog/rotateDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3d/simpledraw-3d.iml" beforeDir="false" afterPath="$PROJECT_DIR$/3d/simpledraw-3d.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assembly/simpledraw-assembly.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assembly/simpledraw-assembly.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter/simpledraw-filter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/filter/simpledraw-filter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/simpledraw-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/simpledraw-frontend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/SimpleDrawController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableOval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableRectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawableTriangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/FreeDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/FreeDrawing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/WritableText.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/WritableText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/IntInputDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/IntInputDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Matrix3.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/Matrix3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zad1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zad1.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="module-info" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +69,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="enabledProfiles">
       <list>
@@ -74,15 +91,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assembly" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -166,7 +184,10 @@
       <workItem from="1637678432706" duration="8325000" />
       <workItem from="1637789846694" duration="2398000" />
       <workItem from="1637883513474" duration="2509000" />
-      <workItem from="1637915695546" duration="36426000" />
+      <workItem from="1637915695546" duration="39175000" />
+      <workItem from="1638030604157" duration="2588000" />
+      <workItem from="1638287097711" duration="911000" />
+      <workItem from="1638386561057" duration="15568000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -259,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637961243025</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Obracanie figury (wreszcie xD)">
+      <created>1637967836895</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637967836895</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +303,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Wstawienie tego co mam do tej pory" />
@@ -289,7 +316,8 @@
     <MESSAGE value="Narzędzie wybierania" />
     <MESSAGE value="Modyfikacja krzywej Beziera" />
     <MESSAGE value="Serializacja krzywej Beziera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Serializacja krzywej Beziera" />
+    <MESSAGE value="Obracanie figury (wreszcie xD)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Obracanie figury (wreszcie xD)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -344,7 +372,13 @@
         <watch expression="Math.round(color.getBlue() * 255)" language="JAVA" />
         <watch expression="Math.round(color.getOpacity() * 255)" language="JAVA" />
         <watch expression="keyEvent.getCharacter()" language="JAVA" />
+        <watch expression="text" language="JAVA" />
+        <watch expression="value" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
