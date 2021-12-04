@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/MoveWaypointContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/util/MoveWaypointDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog/moveWaypoint.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/DisjointUnionSets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/TwoPass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/io/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/io/FileLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/BezierCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolBezierCurve.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolBezierCurve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawPolygons.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolDrawPolygons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolModifyBezier.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/ToolModifyBezier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierState.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierStateInProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierStateInProgress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierStateNotCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/tools/bezier/BezierStateNotCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/PercentHueDetection.java" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/PercentHueDetection.java" afterDir="false" />
     </list>
     <list id="76210a8b-a150-4005-ac91-6f61c59debb5" name="Changes by Patryk" comment="">
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/ImportFileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/ImportFileViewController.java" afterDir="false" />
@@ -58,15 +51,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/shapes/DrawablePolygon.java">
-      <ranges>
-        <range start1="12" end1="12" start2="12" end2="13" changelist="76210a8b-a150-4005-ac91-6f61c59debb5" />
-        <range start1="160" end1="160" start2="161" end2="177" changelist="06ba970e-52a4-45e1-9014-ef9c2394ef8e" />
-        <range start1="163" end1="164" start2="180" end2="197" changelist="76210a8b-a150-4005-ac91-6f61c59debb5" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -95,7 +79,7 @@
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
@@ -191,7 +175,7 @@
       <workItem from="1638030604157" duration="2588000" />
       <workItem from="1638287097711" duration="911000" />
       <workItem from="1638386561057" duration="27577000" />
-      <workItem from="1638475565739" duration="6086000" />
+      <workItem from="1638475565739" duration="36124000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -305,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638475704374</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Gotowe na zadanie 7">
+      <created>1638481667563</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638481667563</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +328,8 @@
     <MESSAGE value="Obracanie figury (wreszcie xD)" />
     <MESSAGE value="Obracanie figury wokół dowolnego punktu" />
     <MESSAGE value="Skalowanie wokół dowolnego punktu (ale jest jeden bug) i tak jakby zrobionie zad 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skalowanie wokół dowolnego punktu (ale jest jeden bug) i tak jakby zrobionie zad 7" />
+    <MESSAGE value="Gotowe na zadanie 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gotowe na zadanie 7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
