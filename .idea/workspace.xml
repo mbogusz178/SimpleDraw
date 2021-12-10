@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/DisjointUnionSets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/TwoPass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/util/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/PercentHueDetection.java" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/PercentHueDetection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/TwoPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/src/main/java/schumi178/javaprojects/graphics/zad1/analysis/TwoPass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml" afterDir="false" />
     </list>
     <list id="76210a8b-a150-4005-ac91-6f61c59debb5" name="Changes by Patryk" comment="">
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/ImportFileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/schumi178/javaprojects/graphics/zad1/ImportFileViewController.java" afterDir="false" />
@@ -50,6 +47,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/frontend/src/main/resources/fxml/simpledraw.fxml">
+      <ranges>
+        <range start1="120" end1="122" start2="120" end2="122" changelist="76210a8b-a150-4005-ac91-6f61c59debb5" />
+        <range start1="125" end1="126" start2="125" end2="125" changelist="06ba970e-52a4-45e1-9014-ef9c2394ef8e" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -175,7 +180,7 @@
       <workItem from="1638030604157" duration="2588000" />
       <workItem from="1638287097711" duration="911000" />
       <workItem from="1638386561057" duration="27577000" />
-      <workItem from="1638475565739" duration="36124000" />
+      <workItem from="1638475565739" duration="41888000" />
     </task>
     <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
       <created>1637669774548</created>
@@ -296,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638481667563</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu">
+      <created>1638655442722</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638655442722</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +341,8 @@
     <MESSAGE value="Obracanie figury wokół dowolnego punktu" />
     <MESSAGE value="Skalowanie wokół dowolnego punktu (ale jest jeden bug) i tak jakby zrobionie zad 7" />
     <MESSAGE value="Gotowe na zadanie 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gotowe na zadanie 7" />
+    <MESSAGE value="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

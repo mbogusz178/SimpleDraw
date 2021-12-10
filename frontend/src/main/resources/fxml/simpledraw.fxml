@@ -123,7 +123,6 @@
                    <Button mnemonicParsing="false" onAction="#moveByCoordinates" text="Przesuń tekstowo" />
                    <Button mnemonicParsing="false" onAction="#scaleByFactor" text="Skaluj tekstowo" />
                    <Button mnemonicParsing="false" onAction="#rotateByAngle" text="Obróć wokół punktu" />
-                  <Button mnemonicParsing="false" onAction="#scaleByFactor" text="Skaluj względem punktu" />
                   <Pane fx:id="toolbarFiller" prefHeight="0.0" prefWidth="0.0" />
                   <Button mnemonicParsing="false" onAction="#onClear" text="Wyczyść" />
                </items>
