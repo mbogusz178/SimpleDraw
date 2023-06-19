@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for Zadanie 1" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="analysis" />
+        <module name="simpledraw-3d" />
+        <module name="simpledraw-assembly" />
+        <module name="simpledraw-frontend" />
+        <module name="simpledraw-filter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="analysis" target="11" />
+      <module name="simpledraw-3d" target="11" />
+      <module name="simpledraw-assembly" target="11" />
+      <module name="simpledraw-filter" target="11" />
+      <module name="simpledraw-frontend" target="11" />
+      <module name="zad1" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

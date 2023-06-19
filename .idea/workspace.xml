@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu">
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+    </list>
+    <list id="76210a8b-a150-4005-ac91-6f61c59debb5" name="Changes by Patryk" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="module-info" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="schumi178 &lt;babelm@gmail.com&gt;" />
+        <option value="schumi178 &lt;72409038+schumi178@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="enabledProfiles">
+      <list>
+        <option value="simpledraw-linux" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectId" id="1yu0sQpcbb5ssnRC57xZwu8I4Fa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="schumi178.javaprojects.graphics.zad1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/main/resources/fxml/dialog" />
+      <recent name="$PROJECT_DIR$/assembly" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/frontend/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assembly" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="schumi178.javaprojects.graphics.zad1.util" />
+      <recent name="schumi178.javaprojects.graphics.zad1.filter" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SimpleDraw" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="schumi178.javaprojects.graphics.zad1.SimpleDraw" />
+      <module name="simpledraw-frontend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="schumi178.javaprojects.graphics.zad1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SimpleDraw" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06ba970e-52a4-45e1-9014-ef9c2394ef8e" name="Changes" comment="" />
+      <created>1633086373656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633086373656</updated>
+      <workItem from="1633086374930" duration="21662000" />
+      <workItem from="1633177941838" duration="2836000" />
+      <workItem from="1633455739741" duration="601000" />
+      <workItem from="1633535197420" duration="2865000" />
+      <workItem from="1633543284709" duration="604000" />
+      <workItem from="1633597152176" duration="599000" />
+      <workItem from="1633688050342" duration="15448000" />
+      <workItem from="1633790744956" duration="61487000" />
+      <workItem from="1634053033614" duration="15563000" />
+      <workItem from="1634235384430" duration="11807000" />
+      <workItem from="1634290447434" duration="30000" />
+      <workItem from="1634290491988" duration="2293000" />
+      <workItem from="1634412437492" duration="1514000" />
+      <workItem from="1634489452613" duration="1106000" />
+      <workItem from="1634492308547" duration="166000" />
+      <workItem from="1634496099323" duration="21234000" />
+      <workItem from="1634661259885" duration="17378000" />
+      <workItem from="1634819063556" duration="7505000" />
+      <workItem from="1634898896205" duration="20506000" />
+      <workItem from="1635190962440" duration="600000" />
+      <workItem from="1635260398638" duration="23069000" />
+      <workItem from="1635417858268" duration="904000" />
+      <workItem from="1635418778172" duration="24000" />
+      <workItem from="1635418816737" duration="3465000" />
+      <workItem from="1635422459367" duration="14070000" />
+      <workItem from="1635501787641" duration="149000" />
+      <workItem from="1635502636852" duration="14454000" />
+      <workItem from="1635841738274" duration="25653000" />
+      <workItem from="1637170895475" duration="40242000" />
+      <workItem from="1637670770278" duration="240000" />
+      <workItem from="1637671016798" duration="30000" />
+      <workItem from="1637671050777" duration="60000" />
+      <workItem from="1637671125622" duration="14000" />
+      <workItem from="1637671145457" duration="5000" />
+      <workItem from="1637671158749" duration="1899000" />
+      <workItem from="1637673695148" duration="3000" />
+      <workItem from="1637673706546" duration="813000" />
+      <workItem from="1637678432706" duration="8325000" />
+      <workItem from="1637789846694" duration="2398000" />
+      <workItem from="1637883513474" duration="2509000" />
+      <workItem from="1637915695546" duration="39175000" />
+      <workItem from="1638030604157" duration="2588000" />
+      <workItem from="1638287097711" duration="911000" />
+      <workItem from="1638386561057" duration="27577000" />
+      <workItem from="1638475565739" duration="41888000" />
+      <workItem from="1687151768366" duration="66000" />
+    </task>
+    <task id="LOCAL-00001" summary="Wstawienie tego co mam do tej pory">
+      <created>1637669774548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637669774548</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Wstawienie tego co mam do tej pory">
+      <created>1637673319838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637673319838</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Wstawienie tego co mam do tej pory">
+      <created>1637673915217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637673915217</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Phansalkar i obrazy testowe">
+      <created>1637772162299</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637772162300</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refaktoring filtrów opartych na Niblacku">
+      <created>1637773904923</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637773904923</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Poprawki w kodzie krzywej Beziera">
+      <created>1637786012465</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637786012465</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Taktyczny commit, rysowanie krzywej Beziera i trochę skalowania (trzeba dopracować)">
+      <created>1637940733788</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637940733788</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Działające skalowanie krzywej Beziera (krawędziami)">
+      <created>1637945580506</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637945580506</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Gotowe rysowanie krzywej Beziera">
+      <created>1637950807173</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637950807173</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Poprawa liczby segmentów">
+      <created>1637951185899</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637951185899</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Narzędzie wybierania">
+      <created>1637955987125</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637955987125</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Modyfikacja krzywej Beziera">
+      <created>1637958998465</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637958998465</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Serializacja krzywej Beziera">
+      <created>1637961243025</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637961243025</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Obracanie figury (wreszcie xD)">
+      <created>1637967836895</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637967836895</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Obracanie figury wokół dowolnego punktu">
+      <created>1638462823929</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638462823929</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Skalowanie wokół dowolnego punktu (ale jest jeden bug) i tak jakby zrobionie zad 7">
+      <created>1638475704374</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638475704374</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Gotowe na zadanie 7">
+      <created>1638481667563</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638481667563</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu">
+      <created>1638655442722</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638655442722</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Wstawienie tego co mam do tej pory" />
+    <MESSAGE value="Phansalkar i obrazy testowe" />
+    <MESSAGE value="Refaktoring filtrów opartych na Niblacku" />
+    <MESSAGE value="Poprawki w kodzie krzywej Beziera" />
+    <MESSAGE value="Taktyczny commit, rysowanie krzywej Beziera i trochę skalowania (trzeba dopracować)" />
+    <MESSAGE value="Działające skalowanie krzywej Beziera (krawędziami)" />
+    <MESSAGE value="Gotowe rysowanie krzywej Beziera" />
+    <MESSAGE value="Poprawa liczby segmentów" />
+    <MESSAGE value="Narzędzie wybierania" />
+    <MESSAGE value="Modyfikacja krzywej Beziera" />
+    <MESSAGE value="Serializacja krzywej Beziera" />
+    <MESSAGE value="Obracanie figury (wreszcie xD)" />
+    <MESSAGE value="Obracanie figury wokół dowolnego punktu" />
+    <MESSAGE value="Skalowanie wokół dowolnego punktu (ale jest jeden bug) i tak jakby zrobionie zad 7" />
+    <MESSAGE value="Gotowe na zadanie 7" />
+    <MESSAGE value="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Działający algorytm wykrywania największej grupy pikseli o danym odcieniu" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/FileLoader.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/pgm/PGMReader.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/ppm/PPMReader.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/schumi178/javaprojects/graphics/zad1/io/ppm/PPMReader.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/filter/src/main/java/schumi178/javaprojects/graphics/zad1/filter/morpho/HitOrMissFilter.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="MavenRunConfiguration">
+        <watch expression="(bytes[3] + 128.0) / 255.0" language="JAVA" />
+        <watch expression="Math.round(color.getRed() * 255)" language="JAVA" />
+        <watch expression="Math.round(color.getGreen() * 255)" language="JAVA" />
+        <watch expression="Math.round(color.getBlue() * 255)" language="JAVA" />
+        <watch expression="Math.round(color.getOpacity() * 255)" language="JAVA" />
+        <watch expression="keyEvent.getCharacter()" language="JAVA" />
+        <watch expression="text" language="JAVA" />
+        <watch expression="value" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Zadanie_1$SimpleDraw.ic" NAME="SimpleDraw Coverage Results" MODIFIED="1638466925280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>schumi178.javaprojects.graphics.zad1.*</FILTER>
+    </SUITE>
+  </component>
+</project>

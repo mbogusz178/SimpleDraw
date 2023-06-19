@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Stage?>
+
+<Stage fx:id="window" alwaysOnTop="true" resizable="false" title="Wybór koloru" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schumi178.javaprojects.graphics.zad1.ColorPickerController">
+    <scene>
+        <Scene>
+         <VBox>
+            <children>
+               <TabPane fx:id="colorSystemTabs" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                     <Tab fx:id="hsvTab" text="HSV">
+                        <content>
+                           <HBox prefHeight="402.0" prefWidth="679.0">
+                              <children>
+                                 <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                    <children>
+                                       <Canvas fx:id="saturationValueRect" height="256.0" onMouseClicked="#onSaturationValueRectInteraction" onMouseDragged="#onSaturationValueRectInteraction" width="256.0" />
+                                       <Canvas fx:id="hueSlider" height="20.0" onMouseClicked="#onHueSliderInteraction" onMouseDragged="#onHueSliderInteraction" width="256.0" />
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label alignment="CENTER" contentDisplay="CENTER" text="Hue" textAlignment="CENTER" />
+                                       <Slider fx:id="sliderHue">
+                                          <VBox.margin>
+                                             <Insets />
+                                          </VBox.margin>
+                                       </Slider>
+                                       <Label fx:id="hueValueLabel" text="Hue Value" />
+                                       <Label text="Saturation" />
+                                       <Slider fx:id="sliderSaturation" />
+                                       <Label fx:id="saturationValueLabel" text="Saturation Value" />
+                                       <Label text="Value" />
+                                       <Slider fx:id="sliderValue" />
+                                       <Label fx:id="valueValueLabel" text="Value Value" />
+                                       <Label text="Wybrany kolor:" />
+                                       <Canvas fx:id="currentColorCanvas" height="50.0" width="50.0" />
+                                    </children>
+                                    <HBox.margin>
+                                       <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                 </VBox>
+                              </children>
+                              <padding>
+                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                              </padding>
+                           </HBox>
+                        </content>
+                     </Tab>
+                     <Tab fx:id="rgbTab" text="RGB">
+                       <content>
+                           <HBox prefHeight="402.0" prefWidth="679.0">
+                              <children>
+                                 <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                    <children>
+                                       <Canvas fx:id="redGreenRect" height="256.0" onMouseClicked="#onRedGreenRectInteraction" onMouseDragged="#onRedGreenRectInteraction" width="256.0" />
+                                       <Canvas fx:id="blueSlider" height="20.0" onMouseClicked="#onBlueSliderInteraction" onMouseDragged="#onBlueSliderInteraction" width="256.0" />
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label alignment="CENTER" contentDisplay="CENTER" text="Red" textAlignment="CENTER" />
+                                       <Slider fx:id="sliderRed">
+                                          <VBox.margin>
+                                             <Insets />
+                                          </VBox.margin>
+                                       </Slider>
+                                       <Label fx:id="redValueLabel" text="Red Value" />
+                                       <Label text="Green" />
+                                       <Slider fx:id="sliderGreen" />
+                                       <Label fx:id="greenValueLabel" text="Green Value" />
+                                       <Label text="Blue" />
+                                       <Slider fx:id="sliderBlue" />
+                                       <Label fx:id="blueValueLabel" text="Blue Value" />
+                                       <Label text="Wybrany kolor:" />
+                                       <Canvas fx:id="currentColorCanvas1" height="50.0" width="50.0" />
+                                    </children>
+                                    <HBox.margin>
+                                       <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                 </VBox>
+                              </children>
+                              <padding>
+                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                              </padding>
+                           </HBox>
+                       </content>
+                     </Tab>
+                     <Tab fx:id="cmykTab" text="CMYK">
+                        <content>
+                           <HBox prefHeight="402.0" prefWidth="679.0">
+                              <children>
+                                 <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                    <children>
+                                       <Canvas fx:id="cyanMagentaRect" height="256.0" onMouseClicked="#onCyanMagentaRectInteraction" onMouseDragged="#onCyanMagentaRectInteraction" width="256.0" />
+                                       <Canvas fx:id="yellowBlackRect" height="256.0" onMouseClicked="#onYellowBlackRectInteraction" onMouseDragged="#onYellowBlackRectInteraction" width="256.0" />
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label alignment="CENTER" contentDisplay="CENTER" text="Cyan" textAlignment="CENTER" />
+                                       <Slider fx:id="sliderCyan">
+                                          <VBox.margin>
+                                             <Insets />
+                                          </VBox.margin>
+                                       </Slider>
+                                       <Label fx:id="cyanValueLabel" text="Cyan Value" />
+                                       <Label text="Magenta" />
+                                       <Slider fx:id="sliderMagenta" />
+                                       <Label fx:id="magentaValueLabel" text="Magenta Value" />
+                                       <Label text="Yellow" />
+                                       <Slider fx:id="sliderYellow" />
+                                       <Label fx:id="yellowValueLabel" text="Yellow Value" />
+                                       <Label text="Black" />
+                                       <Slider fx:id="sliderBlack" />
+                                       <Label fx:id="blackValueLabel" text="Black Value" />
+                                       <Label text="Wybrany kolor:" />
+                                       <Canvas fx:id="currentColorCanvas2" height="50.0" width="50.0" />
+                                    </children>
+                                    <HBox.margin>
+                                       <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                 </VBox>
+                              </children>
+                              <padding>
+                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                              </padding>
+                           </HBox>
+                        </content>
+                     </Tab>
+                  </tabs>
+               </TabPane>
+               <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                 <buttons>
+                   <Button mnemonicParsing="false" onAction="#onClickCancel" text="Anuluj" />
+                     <Button mnemonicParsing="false" onAction="#onClickOK" text="OK" />
+                 </buttons>
+                  <padding>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+               </ButtonBar>
+            </children>
+         </VBox>
+        </Scene>
+    </scene>
+</Stage>
