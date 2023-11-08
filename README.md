@@ -1,2 +1,3 @@
 # SimpleDraw
-Zadania z grafiki komputerowej
+
+Prosty edytor obrazów
